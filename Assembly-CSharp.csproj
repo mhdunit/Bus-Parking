@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{34CE5F9F-8056-2844-0792-BEEF1B9BD7CE}</ProjectGuid>
+    <ProjectGuid>{558BC334-E2FA-FB59-2D3C-76DCC88C0A5B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -143,25 +143,25 @@
     <None Include="Assets\BusParking2\Scripts\PostEffects\Effects\ImageEffects\Shaders\SimpleClear.shader" />
     <None Include="Assets\BusParking2\Documentation\Lightmapping.txt" />
     <Reference Include="Cinemachine">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity 2018.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -362,19 +362,19 @@
       <HintPath>C:/Program Files/Unity 2018.3.9f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>F:/Unity Project/New Hamed Soleimani/Bus/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity 2018.3.9f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
