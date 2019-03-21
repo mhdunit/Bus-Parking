@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BusParking2\MHD\Scripts\GarageCameraCinemachine.cs" />
     <Compile Include="Assets\BusParking2\Scripts\CameraMove.cs" />
     <Compile Include="Assets\BusParking2\Scripts\Car\CarAudio.cs" />
     <Compile Include="Assets\BusParking2\Scripts\Car\CarController.cs" />
