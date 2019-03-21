@@ -30,7 +30,7 @@ public class GarageCameraCinemachine : MonoBehaviour
         }
         else if (GarageFreeLookCamera.m_XAxis.m_InputAxisValue == 0 && GarageFreeLookCamera.m_YAxis.m_InputAxisValue == 0)
         {
-            if (GarageFreeLookCamera.m_YAxis.Value > 0.46 && GarageFreeLookCamera.m_YAxis.Value < 0.54)
+            if (GarageFreeLookCamera.m_YAxis.Value > 0.44 && GarageFreeLookCamera.m_YAxis.Value < 0.56)
             {
                 if (isAxisXNag)
                 {
