@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: 511391142e77217458d51b0000db217b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Balabar
+    100004: Balabar 1
+    100006: BalaBarBaseL
+    100008: BalaBarBaseR
+    100010: Bush
+    100012: FlowerBush1
+    100014: FlowerBush2
+    100016: IntranceTablo
+    100018: LeftBackWalls
+    100020: LeftCenterBlovar
+    100022: LeftFrontWalls
+    100024: LeftTerminal
+    100026: Natures
+    100028: RightBackWalls
+    100030: RightCenterBolvar
+    100032: RightFrontWalls
+    100034: RightTerminal
+    100036: Security_Cabine
+    100038: TaavoniTablo
+    100040: TaavoniTablo 1
+    100042: Terminal_Center
+    100044: TerminalGround
+    100046: Tree
+    100048: Azadi_Terminal
+    100050: Colliders
+    100052: LeftTerminalCollider
+    100054: RightTerminalCollider
+    100056: Terminal_CenterCollider
+    400000: //RootNode
+    400002: Balabar
+    400004: Balabar 1
+    400006: BalaBarBaseL
+    400008: BalaBarBaseR
+    400010: Bush
+    400012: FlowerBush1
+    400014: FlowerBush2
+    400016: IntranceTablo
+    400018: LeftBackWalls
+    400020: LeftCenterBlovar
+    400022: LeftFrontWalls
+    400024: LeftTerminal
+    400026: Natures
+    400028: RightBackWalls
+    400030: RightCenterBolvar
+    400032: RightFrontWalls
+    400034: RightTerminal
+    400036: Security_Cabine
+    400038: TaavoniTablo
+    400040: TaavoniTablo 1
+    400042: Terminal_Center
+    400044: TerminalGround
+    400046: Tree
+    400048: Azadi_Terminal
+    400050: Colliders
+    400052: LeftTerminalCollider
+    400054: RightTerminalCollider
+    400056: Terminal_CenterCollider
+    2100000: Bus_Station
+    2100002: TerminalTablo
+    2100004: TreeMat
+    2100006: Terminal_Ground_Mat
+    2300000: Balabar
+    2300002: Balabar 1
+    2300004: BalaBarBaseL
+    2300006: BalaBarBaseR
+    2300008: Bush
+    2300010: FlowerBush1
+    2300012: FlowerBush2
+    2300014: IntranceTablo
+    2300016: LeftBackWalls
+    2300018: LeftCenterBlovar
+    2300020: LeftFrontWalls
+    2300022: LeftTerminal
+    2300024: RightBackWalls
+    2300026: RightCenterBolvar
+    2300028: RightFrontWalls
+    2300030: RightTerminal
+    2300032: Security_Cabine
+    2300034: TaavoniTablo
+    2300036: TaavoniTablo 1
+    2300038: Terminal_Center
+    2300040: TerminalGround
+    2300042: Tree
+    2300044: LeftTerminalCollider
+    2300046: RightTerminalCollider
+    2300048: Terminal_CenterCollider
+    3300000: Balabar
+    3300002: Balabar 1
+    3300004: BalaBarBaseL
+    3300006: BalaBarBaseR
+    3300008: Bush
+    3300010: FlowerBush1
+    3300012: FlowerBush2
+    3300014: IntranceTablo
+    3300016: LeftBackWalls
+    3300018: LeftCenterBlovar
+    3300020: LeftFrontWalls
+    3300022: LeftTerminal
+    3300024: RightBackWalls
+    3300026: RightCenterBolvar
+    3300028: RightFrontWalls
+    3300030: RightTerminal
+    3300032: Security_Cabine
+    3300034: TaavoniTablo
+    3300036: TaavoniTablo 1
+    3300038: Terminal_Center
+    3300040: TerminalGround
+    3300042: Tree
+    3300044: LeftTerminalCollider
+    3300046: RightTerminalCollider
+    3300048: Terminal_CenterCollider
+    4300000: RightTerminal
+    4300002: TaavoniTablo
+    4300004: LeftTerminal
+    4300006: TaavoniTablo
+    4300008: FlowerBush2
+    4300010: FlowerBush1
+    4300012: Tree
+    4300014: Bush
+    4300016: RightBackWalls
+    4300018: LeftFrontWalls
+    4300020: TerminalGround
+    4300022: IntranceTablo
+    4300024: LeftBackWalls
+    4300026: RightCenterBolvar
+    4300028: RightFrontWalls
+    4300030: Security_Cabine
+    4300032: LeftCenterBlovar
+    4300034: Terminal_Center
+    4300036: BalaBarBaseR
+    4300038: Balabar
+    4300040: BalaBarBaseL
+    4300042: Balabar
+    4300044: RightTerminalCollider
+    4300046: Terminal_CenterCollider
+    4300048: LeftTerminalCollider
+    6400000: Balabar
+    6400002: Balabar 1
+    6400004: BalaBarBaseL
+    6400006: BalaBarBaseR
+    6400008: Bush
+    6400010: FlowerBush1
+    6400012: FlowerBush2
+    6400014: IntranceTablo
+    6400016: LeftBackWalls
+    6400018: LeftCenterBlovar
+    6400020: LeftFrontWalls
+    6400022: LeftTerminal
+    6400024: RightBackWalls
+    6400026: RightCenterBolvar
+    6400028: RightFrontWalls
+    6400030: RightTerminal
+    6400032: Security_Cabine
+    6400034: TaavoniTablo
+    6400036: TaavoniTablo 1
+    6400038: Terminal_Center
+    6400040: TerminalGround
+    6400042: Tree
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
