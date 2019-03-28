@@ -8,6 +8,9 @@ public class FixNexPrevButton : MonoBehaviour
     public CarSelect CS;
     public GameObject Next, Prev;
     public int EnableDisableButtonTime;
+    public Image BusTitleImage;
+    public Sprite[] BusTitle;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,7 @@ public class FixNexPrevButton : MonoBehaviour
     }
     void BusNextPrevCheck()
     {
+        BusTitleImage.sprite = BusTitle[PlayerPrefs.GetInt("BusID")];
         if (CS.cars.Length - 1 == PlayerPrefs.GetInt("BusID"))
             Next.SetActive(false);
         else
