@@ -10,15 +10,22 @@ public class FixNexPrevButton : MonoBehaviour
     public int EnableDisableButtonTime;
     public Image BusTitleImage;
     public Sprite[] BusTitle;
+    public GameObject BuyButton, ColorFalseB, UpgradeFalseB;
     
     // Start is called before the first frame update
     void Start()
     {
         BusNextPrevCheck();
+
+        BusBuyChecker();
     }
     void BusNextPrevCheck()
     {
+
         BusTitleImage.sprite = BusTitle[PlayerPrefs.GetInt("BusID")];
+
+        BusBuyChecker();
+
         if (CS.cars.Length - 1 == PlayerPrefs.GetInt("BusID"))
             Next.SetActive(false);
         else
@@ -32,6 +39,7 @@ public class FixNexPrevButton : MonoBehaviour
     public void SetTrueFalse()
     {
         BusNextPrevCheck();
+        
         StartCoroutine(SetTrueFalseAfter1Minute());  
     }
     IEnumerator SetTrueFalseAfter1Minute()
@@ -44,5 +52,17 @@ public class FixNexPrevButton : MonoBehaviour
         Prev.GetComponent<Button>().enabled = true;
 
     }
- 
+ void BusBuyChecker()
+    {
+        if (BuyButton.activeSelf)
+        {
+            ColorFalseB.SetActive(true);
+            UpgradeFalseB.SetActive(true);
+        }
+        else
+        {
+            ColorFalseB.SetActive(false);
+            UpgradeFalseB.SetActive(false);
+        }
+    }
 }
