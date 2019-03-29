@@ -126,7 +126,7 @@ public class CarSelect : MonoBehaviour
 
 
 		Destroy (GameObject.FindGameObjectWithTag ("Player"));
-		tempG = (GameObject)Instantiate (cars [ID], point.position, point.rotation);
+		tempG = (GameObject)Instantiate (cars [ID], point.parent.position, point.rotation);
 
 		if (vType == VehicleType.Car) {
 			if (ringSport) {
