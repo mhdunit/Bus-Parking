@@ -5,6 +5,7 @@ using Cinemachine;
 
 public class GarageCameraCinemachine : MonoBehaviour
 {
+
     CinemachineFreeLook GarageFreeLookCamera;
     public int RotationSpeed;
     public int WaitingTimeRotate;
@@ -46,4 +47,6 @@ public class GarageCameraCinemachine : MonoBehaviour
         }
 
     }
+
+
 }
