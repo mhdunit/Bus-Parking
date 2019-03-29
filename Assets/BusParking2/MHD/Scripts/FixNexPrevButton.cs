@@ -11,13 +11,21 @@ public class FixNexPrevButton : MonoBehaviour
     public Image BusTitleImage;
     public Sprite[] BusTitle;
     public GameObject BuyButton, ColorFalseB, UpgradeFalseB;
+    public AudioSource AS;
+    public AudioClip[] AC;
     
     // Start is called before the first frame update
     void Start()
     {
+        AS = GetComponent < AudioSource>();
+
         BusNextPrevCheck();
 
         BusBuyChecker();
+    }
+    private void Update()
+    {
+        MainMenuMusicRamdom();
     }
     void BusNextPrevCheck()
     {
@@ -52,7 +60,7 @@ public class FixNexPrevButton : MonoBehaviour
         Prev.GetComponent<Button>().enabled = true;
 
     }
- void BusBuyChecker()
+  public void BusBuyChecker()
     {
         if (BuyButton.activeSelf)
         {
@@ -65,4 +73,13 @@ public class FixNexPrevButton : MonoBehaviour
             UpgradeFalseB.SetActive(false);
         }
     }
+    void MainMenuMusicRamdom()
+    {
+        if (!AS.isPlaying)
+        {
+            int MusicRandomNumber = Random.Range(0, AC.Length);
+            AS.PlayOneShot(AC[MusicRandomNumber]);
+        }
+    }
+            
 }
