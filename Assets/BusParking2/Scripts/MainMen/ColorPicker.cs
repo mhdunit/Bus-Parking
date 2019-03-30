@@ -24,11 +24,11 @@ public class ColorPicker : MonoBehaviour {
 
     int ColorPrice;
 
-    public Text TotalScore, ItemScore,MainTotalScore;
+    public Text TotalScore, ItemScore, MainTotalScore, Descripton;
 
     int totalScoreNumber;
 
-    public GameObject BuyPanel,Descripton1,Descripton2;
+    public GameObject BuyPanel;
 
 	public VehicleType vehicleType;
 
@@ -71,15 +71,13 @@ public class ColorPicker : MonoBehaviour {
         if (totalScoreNumber >= ColorPrice)
         {
             TotalScore.color = Color.green;
-            Descripton1.SetActive(true);
-            Descripton2.SetActive(false);
+            Descripton.text = "Do you want to buy this item ?";
         }
         // if total score is smaller than color price
         else
         {
             TotalScore.color = Color.red;
-            Descripton1.SetActive(false);
-            Descripton2.SetActive(true);
+            Descripton.text = "No Enough Score Do You Want Some ?";
         }
 
         BuyPanel.SetActive(true);
@@ -87,13 +85,14 @@ public class ColorPicker : MonoBehaviour {
     public void BuyOrWatchvideo()
     {
         // if total score is bigget than color price
-        if (Descripton1.activeSelf)
+        if (totalScoreNumber >= ColorPrice)
         {
             totalScoreNumber -= ColorPrice;
             PlayerPrefs.SetInt("Coins", totalScoreNumber);
             MainTotalScore.text = totalScoreNumber.ToString();
             ColorLock[ColorId].SetActive(false);
             PlayerPrefs.SetInt("Bus" + PlayerPrefs.GetInt("BusID") + "Color"+ColorId, 3);
+            SetColor(ColorId);
 
         }
         // if total score is smaller than color price
