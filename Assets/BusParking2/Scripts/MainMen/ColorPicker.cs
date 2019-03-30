@@ -77,7 +77,7 @@ public class ColorPicker : MonoBehaviour {
         else
         {
             TotalScore.color = Color.red;
-            Descripton.text = "No Enough Score Do You Want Some ?";
+            Descripton.text = "No Enough Score \n Do You Want Some ?";
         }
 
         BuyPanel.SetActive(true);
