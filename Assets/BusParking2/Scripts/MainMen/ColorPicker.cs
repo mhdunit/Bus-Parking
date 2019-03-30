@@ -16,6 +16,8 @@ using UnityEngine.SceneManagement;
 public class ColorPicker : MonoBehaviour {
 
     // List of the colors
+    int ColorId;
+
     public Color[] Colors;
 
     public GameObject[] ColorLock;
@@ -30,9 +32,18 @@ public class ColorPicker : MonoBehaviour {
 
 	public VehicleType vehicleType;
 
-    void Start()
+    void OnEnable()
     {
         totalScoreNumber = PlayerPrefs.GetInt("Coins");
+
+        for (int i = 1; i < ColorLock.Length; i++)
+        {
+            if (PlayerPrefs.GetInt("Bus" + PlayerPrefs.GetInt("BusID") + "Color" + i) == 3)
+                ColorLock[i].SetActive(false);
+            else
+                ColorLock[i].SetActive(true);
+
+        }
     }
     // Public function for changing color buttons
     public void SetColor (int id)
@@ -52,6 +63,7 @@ public class ColorPicker : MonoBehaviour {
 	}
     public void BuyColor(int id)
     {
+                ColorId = id;
                 TotalScore.text = totalScoreNumber.ToString();
                 ColorPrice = (PlayerPrefs.GetInt("BusID") * 10) + (id + 1) * 10;
                 ItemScore.text = ColorPrice.ToString();
@@ -80,7 +92,8 @@ public class ColorPicker : MonoBehaviour {
             totalScoreNumber -= ColorPrice;
             PlayerPrefs.SetInt("Coins", totalScoreNumber);
             MainTotalScore.text = totalScoreNumber.ToString();
-           
+            ColorLock[ColorId].SetActive(false);
+            PlayerPrefs.SetInt("Bus" + PlayerPrefs.GetInt("BusID") + "Color"+ColorId, 3);
 
         }
         // if total score is smaller than color price

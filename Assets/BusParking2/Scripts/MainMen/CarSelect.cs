@@ -125,7 +125,7 @@ public class CarSelect : MonoBehaviour
 			PlayerPrefs.SetInt ("TruckID", ID);
 
 
-		Destroy (GameObject.FindGameObjectWithTag ("Player"));
+        Destroy (GameObject.FindGameObjectWithTag ("Player"));
 		tempG = (GameObject)Instantiate (cars [ID], point.position, point.rotation);
 
 		if (vType == VehicleType.Car) {
