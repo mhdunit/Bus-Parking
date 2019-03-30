@@ -10,26 +10,29 @@ public class SwitchingCameras : MonoBehaviour
     // Start is called before the first frame update
 
 
-    public void SetDefaultCameraToColorCamera()
+    public void SetColorCamera()
     {
-        SwitchCamera.SetBool("Color Camera", true);
+        SwitchCamera.SetTrigger("Color Camera");
         AS.PlayOneShot(CameraMove);
     }
-    public void SetColorCameraToDefaultCamera()
-    {
-        SwitchCamera.SetBool("Color Camera", false);
-        AS.PlayOneShot(CameraMoveBack);
 
-    }
-    public void SetDefaultCameraToUpgradeCamera()
+    public void SetUpgradeCamera()
     {
-        SwitchCamera.SetBool("Upgrade Camera", true);
+        SwitchCamera.SetTrigger("Upgrade Camera");
         AS.PlayOneShot(CameraMove);
         AS.Play();
     }
-    public void SetUpgradeCameraToDefaultCamera()
+    public void SetSettingCamera()
     {
-        SwitchCamera.SetBool("Upgrade Camera", false);
-        AS.PlayOneShot(CameraMoveBack);
+        SwitchCamera.SetTrigger("Setting Camera");
+        AS.PlayOneShot(CameraMove);
+        AS.Play();
     }
+    public void SetDefultCamera()
+    {
+        SwitchCamera.SetTrigger("Default Camera");
+        AS.PlayOneShot(CameraMoveBack);
+
+    }
+
 }
