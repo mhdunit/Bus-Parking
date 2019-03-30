@@ -15,13 +15,27 @@ using UnityEngine.SceneManagement;
 
 public class ColorPicker : MonoBehaviour {
 
-	// List of the colors
-	public Color[] Colors;
+    // List of the colors
+    public Color[] Colors;
+
+    public GameObject[] ColorLock;
+
+    int ColorPrice;
+
+    public Text TotalScore, ItemScore,MainTotalScore;
+
+    int totalScoreNumber;
+
+    public GameObject BuyPanel,Descripton1,Descripton2;
 
 	public VehicleType vehicleType;
 
-	// Public function for changing color buttons
-	public void SetColor (int id)
+    void Start()
+    {
+        totalScoreNumber = PlayerPrefs.GetInt("Coins");
+    }
+    // Public function for changing color buttons
+    public void SetColor (int id)
 	{
 		if (vehicleType == VehicleType.Car) {
 			PlayerPrefs.SetInt ("CarColor" + PlayerPrefs.GetInt ("CarID").ToString (), id);
@@ -36,4 +50,44 @@ public class ColorPicker : MonoBehaviour {
  			GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<ColorLoader>().mat.color = Colors [id];
 
 	}
-}
+    public void BuyColor(int id)
+    {
+                TotalScore.text = totalScoreNumber.ToString();
+                ColorPrice = (PlayerPrefs.GetInt("BusID") * 10) + (id + 1) * 10;
+                ItemScore.text = ColorPrice.ToString();
+        // if total score is bigget than color price
+        if (totalScoreNumber >= ColorPrice)
+        {
+            TotalScore.color = Color.green;
+            Descripton1.SetActive(true);
+            Descripton2.SetActive(false);
+        }
+        // if total score is smaller than color price
+        else
+        {
+            TotalScore.color = Color.red;
+            Descripton1.SetActive(false);
+            Descripton2.SetActive(true);
+        }
+
+        BuyPanel.SetActive(true);
+    }
+    public void BuyOrWatchvideo()
+    {
+        // if total score is bigget than color price
+        if (Descripton1.activeSelf)
+        {
+            totalScoreNumber -= ColorPrice;
+            PlayerPrefs.SetInt("Coins", totalScoreNumber);
+            MainTotalScore.text = totalScoreNumber.ToString();
+           
+
+        }
+        // if total score is smaller than color price
+        else
+        {
+            // Watch Video
+            print("Watch Video");
+        }
+    }
+    }
