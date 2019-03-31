@@ -10,35 +10,70 @@ public class UpgradeSystem : MonoBehaviour
 {
     public Slider Power, Speed, Steer;
     public GameObject[] LevelMax;
+    public Text [] LevelNumber;
+    public Text TotalMain,TotalScore,UpgradeScore,Description;
+    int TotalScoreNumber,UpgradeScoreNumber,UpgradeID;
 
 
 
 
-    void Start()
-    {
 
-    }
     void OnEnable()
     {
+        TotalScoreNumber = PlayerPrefs.GetInt("Coins");
 
+        TotalScore.text = TotalScoreNumber.ToString();
+
+
+        // Power Level Checker
         Power.value = PlayerPrefs.GetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Power");
         if (Power.value == 10)
+        {
+            LevelNumber[0].text = "Max";
+            LevelNumber[0].color = Color.green;
             LevelMax[0].SetActive(true);
+        }
+            
         else
+        {
             LevelMax[0].SetActive(false);
+            LevelNumber[0].color = Color.white;
+            LevelNumber[0].text = Power.value.ToString();
+        }
 
+        // Speed Level Checker
         Speed.value = PlayerPrefs.GetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Speed");
         if (Speed.value == 10)
+        {
+            LevelNumber[1].text = "Max";
+            LevelNumber[1].color = Color.green;
             LevelMax[1].SetActive(true);
+        }
+            
         else
+        {
+            LevelNumber[1].text = Speed.value.ToString();
+            LevelNumber[1].color = Color.white;
             LevelMax[1].SetActive(false);
+        }
+            
 
-
+        // Steer Level Checker
         Steer.value = PlayerPrefs.GetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Steer");
         if (Steer.value == 10)
+        {
+            LevelNumber[2].text = "Max";
+            LevelNumber[2].color = Color.green;
             LevelMax[2].SetActive(true);
+        }
+            
         else
+        {
+            LevelNumber[2].text = Steer.value.ToString();
+            LevelNumber[2].color = Color.white;
             LevelMax[2].SetActive(false);
+        }
+            
 
     }
     public void BusUpgradePower()
@@ -46,13 +81,15 @@ public class UpgradeSystem : MonoBehaviour
         if (Power.value < 10)
         {
             Power.value += 1;
+           
             PlayerPrefs.SetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Power", (int)Power.value);
 
             if (Power.value < 10)
-                print("Power Upgrade Level to : " + Power.value);
+                LevelNumber[0].text = Power.value.ToString();
             else
             {
-                print("Power Upgrade Level to Max");
+                LevelNumber[0].text = "Max";
+                LevelNumber[0].color = Color.green;
                 LevelMax[0].SetActive(true);
             }
         }
@@ -65,10 +102,11 @@ public class UpgradeSystem : MonoBehaviour
             PlayerPrefs.SetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Speed", (int)Speed.value);
 
             if (Speed.value < 10)
-                print("Speed Upgrade Level to : " + Speed.value);
+                LevelNumber[1].text = Speed.value.ToString();
             else
             {
-                print("Speed Upgrade Level to Max");
+                LevelNumber[1].text = "Max";
+                LevelNumber[1].color = Color.green;
                 LevelMax[1].SetActive(true);
             }
         }
@@ -81,12 +119,59 @@ public class UpgradeSystem : MonoBehaviour
             PlayerPrefs.SetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Steer", (int)Steer.value);
 
             if (Steer.value < 10)
-                print("Steer Upgrade Level to : " + Steer.value);
+                LevelNumber[2].text = Steer.value.ToString();
             else
             {
-                print("Power Upgrade Level to Max");
+                LevelNumber[2].text = "Max";
+                LevelNumber[2].color = Color.green;
                 LevelMax[2].SetActive(true);
             }
+        }
+    }
+    public void UpgradePrice(Slider Upgrade)
+    {
+        //Check for Which Upgrade ?
+        if (Upgrade.name == "Power Scroolbar")
+            UpgradeID = 0;
+        else if (Upgrade.name == "Speed Scroolbar")
+            UpgradeID = 1;
+        else
+            UpgradeID = 2;
+
+
+        UpgradeScoreNumber = (PlayerPrefs.GetInt("BusID") * 3) + ((((int)Upgrade.value) + 1) * 5);
+            UpgradeScore.text = UpgradeScoreNumber.ToString();
+        if (TotalScoreNumber < UpgradeScoreNumber)
+        {
+            TotalScore.color = Color.red;
+            Description.text = "No Enough Score \n Do You Want Some ?";
+        }
+        else
+        {   
+            TotalScore.color = Color.green;
+            Description.text = "Do you want to buy this Upgrade?";
+        }
+           
+    }
+    public void UpgradeBuyYesOrNo()
+    {
+
+        if (TotalScoreNumber >= UpgradeScoreNumber)
+        {
+            TotalScoreNumber -= UpgradeScoreNumber;
+            PlayerPrefs.SetInt("Coins", TotalScoreNumber);
+            TotalMain.text = TotalScore.text = PlayerPrefs.GetInt("Coins").ToString();
+            if (UpgradeID == 0)
+                BusUpgradePower();
+            else if (UpgradeID == 1)
+                BusUpgradeSpeed();
+            else
+                BusUpgradeSteer();
+            }
+        else
+        {
+            // Watch Video
+            print("Watch video");
         }
     }
 }
