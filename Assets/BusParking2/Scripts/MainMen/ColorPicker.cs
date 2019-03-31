@@ -71,7 +71,7 @@ public class ColorPicker : MonoBehaviour {
         if (totalScoreNumber >= ColorPrice)
         {
             TotalScore.color = Color.green;
-            Descripton.text = "Do you want to buy this item ?";
+            Descripton.text = "Do you want to buy this Color ?";
         }
         // if total score is smaller than color price
         else
