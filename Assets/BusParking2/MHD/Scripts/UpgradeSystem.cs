@@ -8,10 +8,9 @@ using UnityEngine.UI;
 
 public class UpgradeSystem : MonoBehaviour
 {
-
-    public GameObject BusPlaceHolder;
-    public Scrollbar Power, Speed, Brake;
-    public GameObject [] LevelMax;
+    int CurrntLevelNumber;
+    public Scrollbar Power, Speed, Steer;
+    public GameObject[] LevelMax;
 
 
 
@@ -20,47 +19,78 @@ public class UpgradeSystem : MonoBehaviour
     {
 
     }
+    void OnEnable()
+    {
 
+        Power.size = PlayerPrefs.GetFloat("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Power");
+        if (Power.size == 1)
+            LevelMax[0].SetActive(true);
+        else
+            LevelMax[0].SetActive(false);
+
+        Speed.size = PlayerPrefs.GetFloat("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Speed");
+        if (Speed.size == 1)
+            LevelMax[1].SetActive(true);
+        else
+            LevelMax[1].SetActive(false);
+
+
+        Steer.size = PlayerPrefs.GetFloat("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Steer");
+        if (Steer.size == 1)
+            LevelMax[2].SetActive(true);
+        else
+            LevelMax[2].SetActive(false);
+
+    }
     public void BusUpgradePower()
     {
-        if (Power.size < 0.8f)
+        if (Power.size < 1)
         {
-            Power.size += 0.2f;
-            print("Power Upgrade Level " + Power.size * 5);
-        }
-        else if (Power.size == 0.8f)
-        {
-            Power.size += 0.2f;
-            LevelMax[0].SetActive(true);
-            print("Power Upgrade Level Max");
+            Power.size += 0.1f;
+            CurrntLevelNumber = (int)(Power.size * 10);
+            PlayerPrefs.SetFloat("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Power", Power.size);
+
+            if (CurrntLevelNumber < 10)
+                print("Power Upgrade Level to : " + CurrntLevelNumber);
+            else
+            {
+                print("Power Upgrade Level to Max");
+                LevelMax[0].SetActive(true);
+            }
         }
     }
     public void BusUpgradeSpeed()
     {
-        if (Speed.size < 0.8f)
+        if (Speed.size < 1)
         {
-            Speed.size += 0.2f;
-            print("Speed Upgrade Level " + Speed.size * 5);
-        }
-        else if (Speed.size == 0.8f)
-        {
-            Speed.size += 0.2f;
-            LevelMax[1].SetActive(true);
-            print("Speed Upgrade Level Max");
+            Speed.size += 0.1f;
+            CurrntLevelNumber = (int)(Speed.size * 10);
+            PlayerPrefs.SetFloat("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Speed", Speed.size);
+
+            if (CurrntLevelNumber < 10)
+                print("Speed Upgrade Level to : " + CurrntLevelNumber);
+            else
+            {
+                print("Speed Upgrade Level to Max");
+                LevelMax[1].SetActive(true);
+            }
         }
     }
-    public void BusUpgradeBrake()
+    public void BusUpgradeSteer()
     {
-        if (Brake.size < 0.8f)
+        if (Steer.size < 1)
         {
-            Brake.size += 0.2f;
-            print("Brake Upgrade Level " + Brake.size * 5);
-        }
-        else if (Brake.size == 0.8f)
-        {
-            Brake.size += 0.2f;
-            LevelMax[2].SetActive(true);
-            print("Brake Upgrade Level Max");
+            Steer.size += 0.1f;
+            CurrntLevelNumber = (int)(Steer.size * 10);
+            PlayerPrefs.SetFloat("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Steer", Steer.size);
+
+            if (CurrntLevelNumber < 10)
+                print("Steer Upgrade Level to : " + CurrntLevelNumber);
+            else
+            {
+                print("Power Upgrade Level to Max");
+                LevelMax[2].SetActive(true);
+            }
         }
     }
 }
