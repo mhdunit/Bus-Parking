@@ -86,6 +86,7 @@ public class CarController : MonoBehaviour
 
 
 
+
 	// car lights
 	public Light[] backLights;
 
@@ -94,10 +95,13 @@ public class CarController : MonoBehaviour
 
 	public float[] gearRatio;
 
+
+
+
 	void Update ()
 	{
 
-		if (SteeringWheelTransform)
+        if (SteeringWheelTransform)
 			SteeringWheelTransform.rotation = 
 				transform.rotation * Quaternion.Euler (0,   0,(Wheel_Colliders[0].steerAngle ) * -6 );
 
@@ -217,21 +221,19 @@ public class CarController : MonoBehaviour
 					audioCar.audioSource.volume = 1f;
 					m_GearNum--;
 				}
+                if (Application.loadedLevelName != "Garage_Bus")
+                {
+                    if (f > upgearlimit && (m_GearNum < (NoOfGears - 1)))
+                    {
+                        audioCar.audioSource.volume = 0.3f;
 
-				if (f > upgearlimit && (m_GearNum < (NoOfGears - 1)))
-				{
-					audioCar.audioSource.volume = 0.3f;
+                        yield return new WaitForSeconds(GearShiftDelay);
+                        audioCar.audioSource.volume = 1f;
 
-					yield return new WaitForSeconds (GearShiftDelay);
-					audioCar.audioSource.volume = 1f;
-
-					m_GearNum++;
-
-
-
-
-
-				}
+                        m_GearNum++;
+                    }
+                }
+				
 			}
 		}
 	}
@@ -553,6 +555,29 @@ public class CarController : MonoBehaviour
 
 		}
 	}
+    // MHD Code Area
+
+    void UpdateSetGet()
+    {
+        if (PlayerPrefs.HasKey("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Power"))
+        {
+            EngineTorque += (PlayerPrefs.GetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Power") * ((PlayerPrefs.GetInt("BusID") * 5) + 35));
+            ReverseTorque += (PlayerPrefs.GetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Power") * ((PlayerPrefs.GetInt("BusID") * 0.5f) + 3.5f));
+        }
+        if (PlayerPrefs.HasKey("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Speed"))
+        {
+            m_Topspeed += PlayerPrefs.GetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Speed");
+        }
+        if (PlayerPrefs.HasKey("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Steer"))
+        {
+            MaxSteerInput += PlayerPrefs.GetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Steer");
+        }
+
+    }
+    void OnEnable()
+    {
+        UpdateSetGet();
+    }
 
 }
 
