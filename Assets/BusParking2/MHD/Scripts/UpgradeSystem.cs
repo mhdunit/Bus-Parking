@@ -13,6 +13,8 @@ public class UpgradeSystem : MonoBehaviour
     public Text [] LevelNumber;
     public Text TotalMain,TotalScore,UpgradeScore,Description;
     int TotalScoreNumber,UpgradeScoreNumber,UpgradeID;
+    public AudioSource AS;
+    public AudioClip GuiDef, GuiUpgrade;
 
 
 
@@ -78,6 +80,7 @@ public class UpgradeSystem : MonoBehaviour
     }
     public void BusUpgradePower()
     {
+        AS.PlayOneShot(GuiUpgrade);
         if (Power.value < 10)
         {
             Power.value += 1;
@@ -96,6 +99,7 @@ public class UpgradeSystem : MonoBehaviour
     }
     public void BusUpgradeSpeed()
     {
+        AS.PlayOneShot(GuiUpgrade);
         if (Speed.value < 10)
         {
             Speed.value += 1;
@@ -113,6 +117,7 @@ public class UpgradeSystem : MonoBehaviour
     }
     public void BusUpgradeSteer()
     {
+        AS.PlayOneShot(GuiUpgrade);
         if (Steer.value < 10)
         {
             Steer.value += 1;
@@ -172,6 +177,7 @@ public class UpgradeSystem : MonoBehaviour
         {
             // Watch Video
             print("Watch video");
+            AS.PlayOneShot(GuiDef);
         }
     }
 }

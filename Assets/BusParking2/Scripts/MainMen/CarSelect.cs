@@ -283,7 +283,6 @@ public class CarSelect : MonoBehaviour
 			}
 		}
 	}
-
 	
 	// Buy current selected car
 	public void BuyCar ()

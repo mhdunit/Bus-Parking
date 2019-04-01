@@ -30,6 +30,9 @@ public class ColorPicker : MonoBehaviour {
 
     public GameObject BuyPanel;
 
+    public AudioSource AS;
+    public AudioClip GuiPaint, GuiDef;
+
 	public VehicleType vehicleType;
 
     void OnEnable()
@@ -93,6 +96,7 @@ public class ColorPicker : MonoBehaviour {
             ColorLock[ColorId].SetActive(false);
             PlayerPrefs.SetInt("Bus" + PlayerPrefs.GetInt("BusID") + "Color"+ColorId, 3);
             SetColor(ColorId);
+            AS.PlayOneShot(GuiPaint);
 
         }
         // if total score is smaller than color price
@@ -100,6 +104,7 @@ public class ColorPicker : MonoBehaviour {
         {
             // Watch Video
             print("Watch Video");
+            AS.PlayOneShot(GuiDef);
         }
     }
     }
