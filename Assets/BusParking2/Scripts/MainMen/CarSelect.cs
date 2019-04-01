@@ -254,13 +254,13 @@ public class CarSelect : MonoBehaviour
 				PlayerPrefs.SetInt ("BusID", ID);
 
 				// Activate loading screen
-				Loading.SetActive (true);
+				//Loading.SetActive (true);
 
-				if (PlayerPrefs.GetInt ("NightMode") == 3) { // 3=>true  , 0 =>false
-					SceneManager.LoadScene (LevelNameNight);
-				} else {
-					SceneManager.LoadScene (LevelNameDay);
-				}
+				//if (PlayerPrefs.GetInt ("NightMode") == 3) { // 3=>true  , 0 =>false
+				//	SceneManager.LoadScene (LevelNameNight);
+				//} else {
+				//	SceneManager.LoadScene (LevelNameDay);
+				//}
 
 			}
 		}

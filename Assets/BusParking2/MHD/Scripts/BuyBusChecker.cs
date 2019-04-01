@@ -10,7 +10,7 @@ public class BuyBusChecker : MonoBehaviour
     int TotalScore, BusScore;
     public AudioSource AS;
     public AudioClip GuiBus, GuiDef;
-    public GameObject BuyBtn;
+    public GameObject BuyBtn,falseColor,falseUpgrade;
 
 
     public void BuyBusMenu()
@@ -40,11 +40,18 @@ public class BuyBusChecker : MonoBehaviour
             PlayerPrefs.SetInt("Coins", TotalScore);
             TotalScoreMainText.text = TotalScoreBuyText.text = PlayerPrefs.GetInt("Coins").ToString();
             AS.PlayOneShot(GuiBus);
+            StartCoroutine(FalseColorAndUpgradeBtn());
         }
         else
         {
             print("Watch video");
             AS.PlayOneShot(GuiDef);
         }
+    }
+    IEnumerator FalseColorAndUpgradeBtn()
+    {
+        yield return new WaitForSeconds(2);
+        falseColor.SetActive(false);
+        falseUpgrade.SetActive(false);
     }
 }
