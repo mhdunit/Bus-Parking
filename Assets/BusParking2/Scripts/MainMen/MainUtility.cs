@@ -76,10 +76,18 @@ public class MainUtility : MonoBehaviour
 
 	public void Exit ()
 	{
-		Application.Quit ();
-	}
+#if UNITY_IOS
+        Application.Quit();
+#elif UNITY_ANDROID
+        System.Diagnostics.Process.GetCurrentProcess().Kill();
+#elif UNITY_EDITOR
+       Application.Quit();
+#endif
 
-	public void SetTrue (GameObject target)
+
+    }
+
+    public void SetTrue (GameObject target)
 	{
 		target.SetActive (true);
 	}
