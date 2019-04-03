@@ -11,21 +11,21 @@
 using UnityEngine;
 using System.Collections;   
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
-
+    public GameObject Loading;
+    public string SceneName;
 	// Array of locks
 	public GameObject[] Locks;
 	    
 	// Temp
 	public int temp;
 
-	// Next menu for activat it
-	public GameObject LevelSelectMenu, CarSelectMenu;
 
 	// Night mode togle
-	public Toggle nightMode;
+	//public Toggle nightMode;
 
 	public Text[] bestTime;
 
@@ -62,10 +62,10 @@ public class LevelSelect : MonoBehaviour
 					Locks [a].SetActive (false);
 			}
 		}
-		if (PlayerPrefs.GetInt ("NightMode") == 3)  // 3 => true, 0 => false
-			nightMode.isOn = true;
-		else
-			nightMode.isOn = false;
+		//if (PlayerPrefs.GetInt ("NightMode") == 3)  // 3 => true, 0 => false
+		//	nightMode.isOn = true;
+		//else
+		//	nightMode.isOn = false;
 
 
 		if (vehicleType == VehicleType.Car) {
@@ -137,43 +137,52 @@ public class LevelSelect : MonoBehaviour
 		}
 	}
 
-	public void LoadLevel (int id)
-	{
-		if (vehicleType == VehicleType.Car) {
-			if (id < temp) {
-				PlayerPrefs.SetInt ("CarLevelID", id);
-				CarSelectMenu.SetActive (true);
-				LevelSelectMenu.SetActive (false);
-			}
-		}
-		if (vehicleType == VehicleType.Bus) {
-			if (id < temp) {
-				PlayerPrefs.SetInt ("BusLevelID", id);
-				CarSelectMenu.SetActive (true);
-				LevelSelectMenu.SetActive (false);
-			}
-		}
-		if (vehicleType == VehicleType.Truck) {
-			if (id < temp) {
-				PlayerPrefs.SetInt ("TruckLevelID", id);
-				CarSelectMenu.SetActive (true);
-				LevelSelectMenu.SetActive (false);
-			}
-		}
+    public void LoadLevel(int id)
+    {
+        if (vehicleType == VehicleType.Car)
+        {
+            if (id < temp)
+            {
+                PlayerPrefs.SetInt("CarLevelID", id);
 
-	}
+            }
+        }
+        if (vehicleType == VehicleType.Bus)
+        {
+            if (id < temp)
+            {
+                PlayerPrefs.SetInt("BusLevelID", id);
 
-	public void SetNightMode()
-	{
-		StartCoroutine (SaveNightMode ());
-	}
-	IEnumerator SaveNightMode()
-	{
+            }
+        }
+        if (vehicleType == VehicleType.Truck)
+        {
+            if (id < temp)
+            {
+                PlayerPrefs.SetInt("TruckLevelID", id);
 
-		yield return new WaitForSeconds (0.3f);
-		if (nightMode.isOn)
-			PlayerPrefs.SetInt ("NightMode", 3);  // 3 => true
-		else
-			PlayerPrefs.SetInt ("NightMode", 0);  // 0 => false
+            }
+        }
+
+        // Activate loading screen
+        Loading.SetActive(true);
+
+// 3=>true  , 0 =>false
+       SceneManager.LoadSceneAsync(SceneName);
+
+
+    }
+    public void SetNightMode()
+	{
+		//StartCoroutine (SaveNightMode ());
 	}
+	//IEnumerator SaveNightMode()
+	//{
+
+	//	yield return new WaitForSeconds (0.3f);
+	//	if (nightMode.isOn)
+	//		PlayerPrefs.SetInt ("NightMode", 3);  // 3 => true
+	//	else
+	//		PlayerPrefs.SetInt ("NightMode", 0);  // 0 => false
+	//}
 }
