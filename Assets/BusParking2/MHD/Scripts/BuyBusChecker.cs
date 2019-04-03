@@ -10,7 +10,7 @@ public class BuyBusChecker : MonoBehaviour
     int TotalScore, BusScore;
     public AudioSource AS;
     public AudioClip GuiBus, GuiDef;
-    public GameObject BuyBtn,falseColor,falseUpgrade;
+    public GameObject BuyBtn,falseColor,falseUpgrade,BusLockIcon;
 
 
     public void BuyBusMenu()
@@ -53,5 +53,6 @@ public class BuyBusChecker : MonoBehaviour
         yield return new WaitForSeconds(2);
         falseColor.SetActive(false);
         falseUpgrade.SetActive(false);
+        BusLockIcon.SetActive(false);
     }
 }
