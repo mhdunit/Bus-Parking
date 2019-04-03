@@ -18,7 +18,7 @@ public class LevelSelect : MonoBehaviour
     public GameObject Loading;
     public string SceneName;
 	// Array of locks
-	public GameObject[] Locks;
+	public GameObject[] Levels,Locks;
 	    
 	// Temp
 	public int temp;
@@ -51,7 +51,11 @@ public class LevelSelect : MonoBehaviour
 			temp = PlayerPrefs.GetInt ("BusLevelNum");
 			for (int a = 0; a <= temp; a++) {
 				if (temp > a)
-					Locks [a].SetActive (false);
+                {
+                    Levels[a].GetComponent<Button>().enabled = true;
+                    Locks[a].SetActive(false);
+                }
+					
 			}
 		}
 		if (vehicleType == VehicleType.Truck) {
