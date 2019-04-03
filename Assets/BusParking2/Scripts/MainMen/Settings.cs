@@ -22,6 +22,8 @@ public class Settings : MonoBehaviour
 	// States info text
 	public Text resolutionState,qualityState;
 
+    public GameObject Camera;
+
 
 	void Start ()
 	{
@@ -39,28 +41,57 @@ public class Settings : MonoBehaviour
 
 
 		if (PlayerPrefs.GetInt ("ColorEffects") == 3)
-			ColorEffects.isOn = true;
+        {
+            ColorEffects.isOn = true;
+        }		
 		else
-			ColorEffects.isOn = false;
-		
+        {
+            ColorEffects.isOn = false;
+        }
+			
 
-		if (PlayerPrefs.GetInt ("Quality") == 0)
-			qualityState.text = "Fastest";
+
+        if (PlayerPrefs.GetInt("Quality") == 0)
+        {
+            qualityState.text = "Fastest";
+            qualityState.color = Color.red;
+        }
 		if (PlayerPrefs.GetInt ("Quality") == 3)
-			qualityState.text = "Good";
+        {
+            qualityState.text = "Good";
+            qualityState.color = new Color(0, 192, 255, 152);
+        }
+			
 		if (PlayerPrefs.GetInt ("Quality") == 5)
-			qualityState.text = "Fantastic";
+        {
+            qualityState.text = "Fantastic";
+            qualityState.color = Color.green;
+        }
+			
 
 		if (PlayerPrefs.GetInt ("Resolution") == 0) {
 			PlayerPrefs.SetInt ("Resolution", 720);
 			resolutionState.text = "720P";
-		} else {
+            resolutionState.color = new Color(0, 192, 255, 152);
+
+        } else {
 			if (PlayerPrefs.GetInt ("Resolution") == 506)
-				resolutionState.text = "506";
-			if (PlayerPrefs.GetInt ("Resolution") == 720)
-				resolutionState.text = "720P";
+            {
+                resolutionState.text = "506";
+                resolutionState.color = Color.red;
+            }
+            if (PlayerPrefs.GetInt ("Resolution") == 720)
+            {
+                resolutionState.text = "720P";
+                resolutionState.color = new Color(0, 192, 255, 152);
+            }
+				
 			if (PlayerPrefs.GetInt ("Resolution") == 1080)
-				resolutionState.text = "1080P";
+            {
+                resolutionState.text = "1080P";
+                resolutionState.color = Color.green;
+            }
+				
 		}
 	}
 
@@ -87,11 +118,23 @@ public class Settings : MonoBehaviour
 		QualitySettings.SetQualityLevel (id, false);
 
 		if (id == 0)
-			qualityState.text = "Fastest";
-		if (id == 3)
-			qualityState.text = "Good";
+        {
+            qualityState.text = "Fastest";
+            qualityState.color = Color.red;
+        }
+			
+        if (id == 3)
+        {
+            qualityState.text = "Good";
+            qualityState.color = new Color(0, 192, 255, 152);
+        }
+			
 		if (id == 5)
-			qualityState.text = "Fantastic";
+        {
+            qualityState.text = "Fantastic";
+            qualityState.color = Color.green;
+        }
+			
 	}
 
 
@@ -100,28 +143,55 @@ public class Settings : MonoBehaviour
 		PlayerPrefs.SetInt ("Resolution", id);
 
 		if (id == 506)
-			resolutionState.text = "506";
+        {
+            resolutionState.text = "506";
+            resolutionState.color = Color.red;
+        }
+			
 		if (id == 720)
-			resolutionState.text = "720P";
+        {
+            resolutionState.text = "720P";
+            resolutionState.color = new Color(0, 192, 255, 152);
+        }
+			
 		if (id == 1080)
-			resolutionState.text = "1080P";
+        {
+            resolutionState.text = "1080P";
+            resolutionState.color = Color.green;
+        }
+			
 	}
 	IEnumerator AmbiantSound_Save ()
 	{
 		yield return new WaitForSeconds (.3f);
 		if (AmbientSound.isOn)
-			PlayerPrefs.SetInt ("AmbientSound", 3);  //3 = true;
-		else
-			PlayerPrefs.SetInt ("AmbientSound", 0);//0 = false;
+        {
+            PlayerPrefs.SetInt("AmbientSound", 3);  //3 = true;
+            
+        }
+
+        else
+        {
+            PlayerPrefs.SetInt("AmbientSound", 0);//0 = false;
+            
+        }
+			
 	}
 	IEnumerator ColorEffects_Save ()
 	{
 		yield return new WaitForSeconds (.3f);
 		if (ColorEffects.isOn)
-			PlayerPrefs.SetInt ("ColorEffects", 3);  //3 = true;
-		else
-			PlayerPrefs.SetInt ("ColorEffects", 0);//0 = false;
-	}
+        {
+            PlayerPrefs.SetInt("ColorEffects", 3);  //3 = true;
+            Camera.GetComponent<MobileColorGrading>().enabled = true;
+        }			
+        else
+        {
+            PlayerPrefs.SetInt("ColorEffects", 0);//0 = false;
+            Camera.GetComponent<MobileColorGrading>().enabled = false;
+        }
+			
+    }
 
 
 	IEnumerator SunShaft_Save ()
