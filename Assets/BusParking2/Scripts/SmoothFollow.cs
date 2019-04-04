@@ -34,7 +34,10 @@ public class SmoothFollow : MonoBehaviour
 
 	IEnumerator Start()
 	{
-
+        if (PlayerPrefs.GetInt("BusID") == 4)
+            distance = 20;
+        else
+            distance = 16;
 
 		if (PlayerPrefs.GetInt ("Resolution") == 506 || PlayerPrefs.GetInt ("Resolution") == 720 || PlayerPrefs.GetInt ("Resolution") == 1080) {
 			if (PlayerPrefs.GetInt ("Resolution") == 506)
