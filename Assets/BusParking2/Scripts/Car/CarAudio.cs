@@ -69,7 +69,7 @@ public class CarAudio : MonoBehaviour
 
 	private static float ULerp (float from, float to, float value)
 	{
-		return (1.0f - value) * from + value * to;   
+		return (1f - value) * from + value * to;   
 	}
 
 	public AudioSource crashSound;

@@ -64,6 +64,7 @@
     <Compile Include="Assets\BusParking2\MHD\Scripts\DeleteAll.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\FixNexPrevButton.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\GarageCameraCinemachine.cs" />
+    <Compile Include="Assets\BusParking2\MHD\Scripts\LoadLevel.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\SetSetting.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\SwitchingCameras.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\TermonalSelectManager.cs" />
