@@ -31,11 +31,11 @@ public class CarInput : MonoBehaviour
 
 	[Space(1)]
 	// Reverse sprites
-	public Sprite ReverseSprite_D,ReverseSprite_R;
+	public GameObject GearD,GearR;
 
-	[Space(1)]
-	// Reverse button image
-	public Image ReverseTarget;
+	//[Space(1)]
+	//// Reverse button image
+	//public Image ReverseTarget;
 
 	// Helper arrow handler for acitivate ans deActivate;
 	[HideInInspector]public GameObject helperArrow;
@@ -240,9 +240,17 @@ public class CarInput : MonoBehaviour
 		ReverseGear = !ReverseGear;
 
 		if (!ReverseGear)
-			ReverseTarget.sprite = ReverseSprite_D;
-		else
-			ReverseTarget.sprite = ReverseSprite_R;
+        {
+            GearD.SetActive(true);
+            GearR.SetActive(false);
+        }
+
+        else
+        {
+            GearD.SetActive(false);
+            GearR.SetActive(true);
+        }
+			
 	}
 
 	public void ToggleHelper()
