@@ -19,7 +19,7 @@ public class Success : MonoBehaviour
 
     //// Loading text for "Loading..."
     //public Text LoadingTXT;
-    public GameObject Loading;
+    public GameObject LoadingMenu;
 	// Parking Manager handler
 	[HideInInspector]public ParkingManager manager;
 
@@ -46,9 +46,9 @@ public class Success : MonoBehaviour
 	// SuccessMenu continue button
 	public void Continue ()
 	{
-        Loading.SetActive(true);
+        LoadingMenu.SetActive(true);
 
-		if(vehicleType == VehicleType.Bus)
+        if (vehicleType == VehicleType.Bus)
 			PlayerPrefs.SetInt ("BusLevelID", PlayerPrefs.GetInt ("BusLevelID") + 1);
 		if(vehicleType == VehicleType.Truck)
 			PlayerPrefs.SetInt ("TruckLevelID", PlayerPrefs.GetInt ("TruckLevelID") + 1);
@@ -56,25 +56,25 @@ public class Success : MonoBehaviour
 			PlayerPrefs.SetInt ("CarLevelID", PlayerPrefs.GetInt ("CarLevelID") + 1);
 		
 		//SceneManager.LoadScene  (SceneManager.GetActiveScene().name);
-        StartCoroutine(WaitLoading(SceneManager.GetActiveScene().name));
+        StartCoroutine(SceneManager.GetActiveScene().name);
     }
 
 
 	// SuccessMenu retry button
 	public void Retry ()
 	{
-        Loading.SetActive(true);
-       // SceneManager.LoadScene (SceneManager.GetActiveScene ().name   );
-        StartCoroutine(WaitLoading(SceneManager.GetActiveScene().name));
+        LoadingMenu.SetActive(true);
+        //SceneManager.LoadScene (SceneManager.GetActiveScene ().name   );
+        StartCoroutine(SceneManager.GetActiveScene().name);
     }
 
 
 	//SuccessMenu exit button    
 	public void Exit ()
 	{
-        Loading.SetActive(true);
-       // SceneManager.LoadScene (garageName);
-        StartCoroutine(WaitLoading(garageName));
+        LoadingMenu.SetActive(true);
+		//SceneManager.LoadScene (garageName);
+        StartCoroutine(garageName);
 	}
 
     IEnumerator WaitLoading(string sceneName)
