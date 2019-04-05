@@ -20,66 +20,62 @@ public class Success : MonoBehaviour
     //// Loading text for "Loading..."
     //public Text LoadingTXT;
     public GameObject LoadingMenu;
-	// Parking Manager handler
-	[HideInInspector]public ParkingManager manager;
 
-	public string garageName = "Garage Bus" ;
+    // Parking Manager handler
+    [HideInInspector] public ParkingManager manager;
 
-	public VehicleType vehicleType;
+    public string garageName;
 
-
-	// Activate parking place helper
-	public void  ActiveHelper ()
-	{
-		manager.Helper.SetActive (!manager.Helper.activeSelf);
-	}
+    public VehicleType vehicleType;
 
 
-	public IEnumerator Start ()
-	{
+    // Activate parking place helper
+    public void ActiveHelper()
+    {
+        manager.Helper.SetActive(!manager.Helper.activeSelf);
+    }
 
-		// Delay and find manager
-		yield return new WaitForSeconds (.3f);
-		manager = GameObject.FindGameObjectWithTag ("Manager").GetComponent<ParkingManager> ();
-	}
 
-	// SuccessMenu continue button
-	public void Continue ()
-	{
+    public IEnumerator Start()
+    {
+
+        // Delay and find manager
+        yield return new WaitForSeconds(.3f);
+        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<ParkingManager>();
+    }
+
+    // SuccessMenu continue button
+    public void Continue()
+    {
         LoadingMenu.SetActive(true);
 
         if (vehicleType == VehicleType.Bus)
-			PlayerPrefs.SetInt ("BusLevelID", PlayerPrefs.GetInt ("BusLevelID") + 1);
-		if(vehicleType == VehicleType.Truck)
-			PlayerPrefs.SetInt ("TruckLevelID", PlayerPrefs.GetInt ("TruckLevelID") + 1);
-		if(vehicleType == VehicleType.Car)
-			PlayerPrefs.SetInt ("CarLevelID", PlayerPrefs.GetInt ("CarLevelID") + 1);
-		
-		//SceneManager.LoadScene  (SceneManager.GetActiveScene().name);
-        StartCoroutine(SceneManager.GetActiveScene().name);
+            PlayerPrefs.SetInt("BusLevelID", PlayerPrefs.GetInt("BusLevelID") + 1);
+        if (vehicleType == VehicleType.Truck)
+            PlayerPrefs.SetInt("TruckLevelID", PlayerPrefs.GetInt("TruckLevelID") + 1);
+        if (vehicleType == VehicleType.Car)
+            PlayerPrefs.SetInt("CarLevelID", PlayerPrefs.GetInt("CarLevelID") + 1);
+
+        SceneManager.LoadSceneAsync  (SceneManager.GetActiveScene().name);
     }
 
 
-	// SuccessMenu retry button
-	public void Retry ()
-	{
-        LoadingMenu.SetActive(true);
-        //SceneManager.LoadScene (SceneManager.GetActiveScene ().name   );
-        StartCoroutine(SceneManager.GetActiveScene().name);
-    }
-
-
-	//SuccessMenu exit button    
-	public void Exit ()
-	{
-        LoadingMenu.SetActive(true);
-		//SceneManager.LoadScene (garageName);
-        StartCoroutine(garageName);
-	}
-
-    IEnumerator WaitLoading(string sceneName)
+    // SuccessMenu retry button
+    public void Retry()
     {
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(sceneName);
+        LoadingMenu.SetActive(true);
+        SceneManager.LoadSceneAsync (SceneManager.GetActiveScene ().name   );
     }
+
+
+    //SuccessMenu exit button    
+    public void Exit()
+    {
+        LoadingMenu.SetActive(true);
+        SceneManager.LoadSceneAsync (garageName);
+    }
+
+
+
+
 }

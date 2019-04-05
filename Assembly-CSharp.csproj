@@ -98,6 +98,7 @@
     <Compile Include="Assets\BusParking2\Scripts\ParkManager\CameraManager.cs" />
     <Compile Include="Assets\BusParking2\Scripts\ParkManager\CollisionItem.cs" />
     <Compile Include="Assets\BusParking2\Scripts\ParkManager\CollisionItemCar.cs" />
+    <Compile Include="Assets\BusParking2\Scripts\ParkManager\FinishedSuccessRewardedVideo.cs" />
     <Compile Include="Assets\BusParking2\Scripts\ParkManager\Helper.cs" />
     <Compile Include="Assets\BusParking2\Scripts\ParkManager\ParkingManager.cs" />
     <Compile Include="Assets\BusParking2\Scripts\ParkManager\ParkingTrigger.cs" />
