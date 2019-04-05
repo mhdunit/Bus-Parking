@@ -60,8 +60,12 @@ public class CarInput : MonoBehaviour
 	// Default control is mobile mode
 	public bool standaloneMode;
 
-	// Find player after car spawned
-	IEnumerator Start ()
+    //Navigation Sprite
+    public Image Navigation;
+    public Sprite NavigationOn, NavigationOff;
+
+    // Find player after car spawned
+    IEnumerator Start ()
 	{
 		
 		yield return new WaitForSeconds (.03f);
@@ -256,7 +260,12 @@ public class CarInput : MonoBehaviour
 	public void ToggleHelper()
 	{
 		helperArrow.SetActive (!helperArrow.activeSelf);
-	}
+
+        if (helperArrow.activeSelf)
+            Navigation.sprite = NavigationOn;
+        else
+            Navigation.sprite = NavigationOff;
+    }
 	float velocityRef;
 	public void Steer(bool left)
 	{

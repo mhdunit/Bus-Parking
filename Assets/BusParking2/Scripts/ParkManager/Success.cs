@@ -15,11 +15,11 @@ using UnityEngine.SceneManagement;
 
 public class Success : MonoBehaviour
 {
-	[Header("Success Menu Manager")]
+    [Header("Success Menu Manager")]
 
-	// Loading text for "Loading..."
-	public Text LoadingTXT;
-
+    //// Loading text for "Loading..."
+    //public Text LoadingTXT;
+    public GameObject Loading;
 	// Parking Manager handler
 	[HideInInspector]public ParkingManager manager;
 
@@ -46,7 +46,7 @@ public class Success : MonoBehaviour
 	// SuccessMenu continue button
 	public void Continue ()
 	{
-		LoadingTXT.text = "Loading...";
+        Loading.SetActive(true);
 
 		if(vehicleType == VehicleType.Bus)
 			PlayerPrefs.SetInt ("BusLevelID", PlayerPrefs.GetInt ("BusLevelID") + 1);
@@ -55,22 +55,31 @@ public class Success : MonoBehaviour
 		if(vehicleType == VehicleType.Car)
 			PlayerPrefs.SetInt ("CarLevelID", PlayerPrefs.GetInt ("CarLevelID") + 1);
 		
-		SceneManager.LoadScene  (SceneManager.GetActiveScene().name);
-	}
+		//SceneManager.LoadScene  (SceneManager.GetActiveScene().name);
+        StartCoroutine(WaitLoading(SceneManager.GetActiveScene().name));
+    }
 
 
 	// SuccessMenu retry button
 	public void Retry ()
 	{
-		LoadingTXT.text = "Loading...";
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().name   );
-	}
+        Loading.SetActive(true);
+       // SceneManager.LoadScene (SceneManager.GetActiveScene ().name   );
+        StartCoroutine(WaitLoading(SceneManager.GetActiveScene().name));
+    }
 
 
 	//SuccessMenu exit button    
 	public void Exit ()
 	{
-		LoadingTXT.text = "Loading...";
-		SceneManager.LoadScene (garageName);
+        Loading.SetActive(true);
+       // SceneManager.LoadScene (garageName);
+        StartCoroutine(WaitLoading(garageName));
 	}
+
+    IEnumerator WaitLoading(string sceneName)
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(sceneName);
+    }
 }

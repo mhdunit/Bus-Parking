@@ -18,8 +18,8 @@ public class PauseMen : MonoBehaviour
 	[Header("Pause Menu Manager")]
 
 
-	public GameObject PauseMenu;
-	public Text LoadingText, AllScore;
+	public GameObject PauseMenu,LoadingMenu;
+	public Text  AllScore;
 
 	public string garageName  = "Garage Bus";
 
@@ -40,10 +40,11 @@ public class PauseMen : MonoBehaviour
 
 	public void Retry ()
 	{
-		LoadingText.text = "Please Wait...";
+        LoadingMenu.SetActive(true);
 		PauseMenu.SetActive (false);
 		Time.timeScale = 1f;
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(WaitLoading(SceneManager.GetActiveScene().name));
 
 
 	}
@@ -51,9 +52,10 @@ public class PauseMen : MonoBehaviour
 	public void Exit ()
 	{
 		Time.timeScale = 1f;
-		LoadingText.text = "Please Wait...";
-		SceneManager.LoadScene(garageName);
-	}
+        LoadingMenu.SetActive(true);
+		//SceneManager.LoadScene(garageName);
+        StartCoroutine(WaitLoading(garageName));
+    }
 
 
 	public void SetFalse(GameObject target)
@@ -68,4 +70,10 @@ public class PauseMen : MonoBehaviour
 
 		target.SetActive (true);
 	}
+
+    IEnumerator WaitLoading( string sceneName)
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(sceneName);
+    }
 }
