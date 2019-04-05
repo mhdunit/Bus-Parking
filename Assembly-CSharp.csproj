@@ -113,6 +113,7 @@
     <Compile Include="Assets\BusParking2\Scripts\PostEffects\Common\RenderTextureUtility.cs" />
     <Compile Include="Assets\BusParking2\Scripts\PostEffects\DOF\DepthOfFieldMobile.cs" />
     <Compile Include="Assets\BusParking2\Scripts\PostEffects\DOF\Quads.cs" />
+    <Compile Include="Assets\BusParking2\Scripts\PostEffects\Effects\ImageEffects\Scripts\CoutDown.cs" />
     <Compile Include="Assets\BusParking2\Scripts\PostEffects\Effects\ImageEffects\Scripts\ImageEffectBase.cs" />
     <Compile Include="Assets\BusParking2\Scripts\PostEffects\Effects\ImageEffects\Scripts\ImageEffects.cs" />
     <Compile Include="Assets\BusParking2\Scripts\PostEffects\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />

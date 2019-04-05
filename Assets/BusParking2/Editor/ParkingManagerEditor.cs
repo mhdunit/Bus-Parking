@@ -119,8 +119,8 @@ public class ParkingManagerEditor : Editor
 		GUI.color = Color.white;
 
 
-		EditorGUILayout.PropertyField (serializedObject.FindProperty ("CountDownText"),
-			new GUIContent ("Count Down Text", "Drag count down info text "), true);
+		EditorGUILayout.PropertyField (serializedObject.FindProperty ("CountDownNumber"),
+			new GUIContent ("Count Down Number", "Drag count down info text "), true);
 
 		EditorGUILayout.PropertyField (serializedObject.FindProperty ("CollistionCountText"),
 			new GUIContent ("Collistion Count Text", "Drag collistion count info text"), true);

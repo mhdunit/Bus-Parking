@@ -16,44 +16,48 @@ using UnityEngine.UI;
 public class ParkingManager : MonoBehaviour
 {
 
-	//---------------------------------------------------------------------------
+    //---------------------------------------------------------------------------
 
-	//  t2 => Trigger 2 -  t1 => Trigger 1   t3 => Trigger 3  ...
+    //  t2 => Trigger 2 -  t1 => Trigger 1   t3 => Trigger 3  ...
+    
+    //  tFront => Trigger Front  -   tBack => Trigger Back
+    public bool t1, t2, t3, t0, tFront, tBack;
 
-	//  tFront => Trigger Front  -   tBack => Trigger Back
-	public bool t1, t2, t3, t0, tFront, tBack;
 
+    //---------------------------------------------------------------------------
+    //Menu object when finish parking
+    public GameObject FinishMenu;
 
-	//---------------------------------------------------------------------------
-	//Menu object when finish parking
-	public GameObject FinishMenu;
-	 
-	// Is parking...  => Menu for count down 3...2...1...  Parked!!!
-	public GameObject TimerCountMen;
+    // Is parking...  => Menu for count down 3...2...1...  Parked!!!
+    public GameObject TimerCountMen;
 
-	//  Controller gameObject for being disabled when parking is done
-	public GameObject Controller;
+    //  Controller gameObject for being disabled when parking is done
+    public GameObject Controller;
 
-	//  Show this menu when collision detection is more than 3 => Park is failed...   sorry
-	public GameObject FailedMenu;
+    //  Show this menu when collision detection is more than 3 => Park is failed...   sorry
+    public GameObject FailedMenu;
 
-	//---------------------------------------------------------------------------
-	//How much score give to player bassed on collision counts before parking?
-	public int CollisionScore0 = 3, CollisionScore1 = 2, CollisionScore2 = 1, CollisionScore3 = 0;
+    //---------------------------------------------------------------------------
+    //How much score give to player bassed on collision counts before parking?
+    public int CollisionScore0 = 3, CollisionScore1 = 2, CollisionScore2 = 1, CollisionScore3 = 0;
 
-	//---------------------------------------------------------------------------
-	// This variables for internal usage
-	private bool isFinish, FinisheD, Score, canLoadinnn = true;
+    //---------------------------------------------------------------------------
+    // This variables for internal usage
+    private bool isFinish, FinisheD, Score, canLoadinnn = true;
 
-	// Internal usage
-	float endTime;
+    // Internal usage
+    float endTime;
 
-	//---------------------------------------------------------------------------
-	//Timer CountDown Text
-	public Text CountDownText;
+    //---------------------------------------------------------------------------
+    //Timer CountDown Text
 
-	//Collistion Count Text
-	public Text CollistionCountText;
+    private CoutDown CD;
+
+    public Sprite[] CountDownNumber;
+    
+
+    //Collistion Count Text
+    public Text CollistionCountText;
 
 	//Finish Score Text
 	public Text FinishScoreText;
@@ -69,11 +73,11 @@ public class ParkingManager : MonoBehaviour
 
 	//---------------------------------------------------------------------------
 	public GameObject Helper;
-	//---------------------------------------------------------------------------
+    //---------------------------------------------------------------------------
+   
 
-
-	//This is alarm sound when collid with something
-	public AudioSource AlarmSound;
+    //This is alarm sound when collid with something
+    public AudioSource AlarmSound;
 
 
 	// Finish star icons
@@ -100,20 +104,22 @@ public class ParkingManager : MonoBehaviour
 
 
 
-	IEnumerator Start ()
-	{
-		if (timeLimit) 
-			TimeDownMenu.SetActive (true);
-		else 
-			TimeDownMenu.SetActive (false);
+    IEnumerator Start()
+    {
+        CD = GetComponent<CoutDown>();
+
+        if (timeLimit)
+            TimeDownMenu.SetActive(true);
+        else
+            TimeDownMenu.SetActive(false);
 
 
 
-		//This is parking timer
-		endTime = Time.time + 4;
+        //This is parking timer
+        endTime = Time.time + 4;
 
-		// Start count down from 3 to 0
-		CountDownText.text = "3"; 
+        // Start count down from 3 to 0
+        CD.CountDownImage.sprite = CountDownNumber[3];
 
 
 		// Create ausiou source
@@ -130,31 +136,35 @@ public class ParkingManager : MonoBehaviour
 	//---------------------------------------------------------------------------
 	void Update ()
 	{
+      
 		/*if (Input.GetKeyDown (KeyCode.V))
 			Debug.Log (" t0 " + t0 + " t1 " + t1 + " t2 " + t2 + " t3 " + t3 + " tFront " + tFront + " tBack    " + tBack);
 			*/
 		// Is parking finished?
 		if (!FinisheD) {// No ,parking isn't finish, check parking state
 
-			if (t0 && t2 && t3 && t1 && tFront && tBack) {// If all of car triggers being entered in parking place
-				// Checking when timer is reached 0(from    3)
-				StartCoroutine (CheckTimeToFinisheD ());
-				// Level is finished
-				isFinish = true;
-				// Park renderer is now green(Correct location on parking place)
-				ParkRenderer.material.color = Color.green;
+            if (t0 && t2 && t3 && t1 && tFront && tBack) {// If all of car triggers being entered in parking place
+                                                          // Checking when timer is reached 0(from    3)
+                StartCoroutine(CheckTimeToFinisheD());
+                // Level is finished
+                isFinish = true;
+                // Park renderer is now green(Correct location on parking place)
+                ParkRenderer.material.color = Color.green;
 
-				if (canLoadinnn) {
-					TimerCountMen.SetActive (true);
-					CountDownText.gameObject.SetActive (true);
-				}
+                if (canLoadinnn) {
+                    TimerCountMen.SetActive(true);
+                    CD.CountDownImage.gameObject.SetActive(true);
+                }
 
-				int timeLeft = (int)(endTime - Time.time); 
-				if (timeLeft < 0)
-					timeLeft = 0;
+                int timeLeft = (int)(endTime - Time.time);
+                if (timeLeft >= 0)
+                    CD.CountDownImage.sprite = CountDownNumber[timeLeft];
+                else
+                    timeLeft = 0;
+               
 
-				//Timer Info  3...2...1....
-				CountDownText.text = timeLeft.ToString ();
+                //Timer Info  3...2...1....
+                
 			} else {// Car doesn't on correct parking place
 				// Stop checking car parking state
 				StopCoroutine (CheckTimeToFinisheD ());
@@ -164,8 +174,8 @@ public class ParkingManager : MonoBehaviour
 				TimerCountMen.SetActive (false);
 
 				endTime = Time.time + 4;
-				
-				CountDownText.text = "3"; 
+
+                CD.CountDownImage.sprite = CountDownNumber[3]; 
 
 				// Car parking place now idle state =>color is now   white
 				ParkRenderer.material.color = Color.white;
@@ -446,7 +456,7 @@ public class ParkingManager : MonoBehaviour
 				// Stop timer menu
 				TimerCountMen.SetActive (false);
 
-				CountDownText.gameObject.SetActive (false);
+                CD.CountDownImage.gameObject.SetActive (false);
 
 				/// Stop car controller
 				Controller.SetActive (false);
@@ -472,7 +482,7 @@ public class ParkingManager : MonoBehaviour
 		// Stop timer menu
 		TimerCountMen.SetActive (false);
 
-		CountDownText.gameObject.SetActive (false);
+        CD.CountDownImage.gameObject.SetActive (false);
 
 		/// Stop car controller
 		Controller.SetActive (false);
