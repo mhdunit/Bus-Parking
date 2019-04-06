@@ -131,6 +131,7 @@
     <Compile Include="Assets\BusParking2\Scripts\TimedObjectDetroyer.cs" />
     <Compile Include="Assets\BusParking2\Standard Assets\Kino\Bloom\Bloom.cs" />
     <Compile Include="Assets\BusParking2\Textures\Effect\Screen\Parallax.cs" />
+    <Compile Include="Assets\Pushe\Pushe.cs" />
     <None Include="Assets\BusParking2\Standard Assets\Projectors\Guidelines.txt" />
     <None Include="Assets\BusParking2\Scripts\PostEffects\DOF\SeparableWeightedBlurDof34.shader" />
     <None Include="Assets\BusParking2\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
