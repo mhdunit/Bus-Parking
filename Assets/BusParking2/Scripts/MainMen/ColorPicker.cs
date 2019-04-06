@@ -37,6 +37,7 @@ public class ColorPicker : MonoBehaviour {
 
     public TapSellUse TSU;
 
+    public GoogleAds GA;
     void OnEnable()
     {
         totalScoreNumber = PlayerPrefs.GetInt("Coins");
@@ -105,7 +106,11 @@ public class ColorPicker : MonoBehaviour {
         else
         {
             // Watch Video
-            TSU.ShowTapSellVideo();
+            if (GA.isActiveAndEnabled)
+                GA.ShowRewardedVideo();
+            else
+                TSU.ShowTapSellVideo();
+
             AS.PlayOneShot(GuiDef);
         }
     }

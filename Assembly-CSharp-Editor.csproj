@@ -68,8 +68,10 @@
     <Compile Include="Assets\BusParking2\Scripts\PostEffects\DOF\Editor\DepthOfFieldMobileEditor.cs" />
     <Compile Include="Assets\BusParking2\Standard Assets\Kino\Bloom\Editor\BloomEditor.cs" />
     <Compile Include="Assets\BusParking2\Standard Assets\Kino\Bloom\Editor\BloomGraphDrawer.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Editor\PListProcessor.cs" />
+    <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.102.0.txt" />
     <None Include="Assets\Pushe\Editor\PusheDependencies.xml" />
-    <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.100.0.txt" />
+    <None Include="Assets\GoogleMobileAds\Editor\GoogleMobileAdsDependencies.xml" />
     <Reference Include="Cinemachine">
       <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
@@ -355,14 +357,14 @@
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.100.0">
-      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.100.0.dll</HintPath>
+    <Reference Include="Google.JarResolver_v1.2.102.0">
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.102.0.dll</HintPath>
     </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.100.0">
-      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.100.0.dll</HintPath>
+    <Reference Include="Google.IOSResolver_v1.2.102.0">
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.102.0.dll</HintPath>
     </Reference>
-    <Reference Include="Google.JarResolver_v1.2.100.0">
-      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.100.0.dll</HintPath>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.102.0">
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.102.0.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity 2018.3.11f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

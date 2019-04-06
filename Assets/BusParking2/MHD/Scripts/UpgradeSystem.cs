@@ -16,6 +16,7 @@ public class UpgradeSystem : MonoBehaviour
     public AudioSource AS;
     public AudioClip GuiDef, GuiUpgrade;
     public TapSellUse TSU;
+    public GoogleAds GA;
 
 
     void OnEnable()
@@ -174,7 +175,11 @@ public class UpgradeSystem : MonoBehaviour
         else
         {
             // Watch Video
-            TSU.ShowTapSellVideo();
+            if (GA.isActiveAndEnabled)
+                GA.ShowRewardedVideo();
+            else
+                TSU.ShowTapSellVideo();
+
             AS.PlayOneShot(GuiDef);
         }
     }

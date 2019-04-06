@@ -11,6 +11,7 @@ public class BuyBusChecker : MonoBehaviour
     public AudioSource AS;
     public AudioClip GuiBus, GuiDef;
     public GameObject BuyBtn,falseColor,falseUpgrade,BusLockIcon;
+    public GoogleAds GA;
     public TapSellUse TSU;
 
 
@@ -45,7 +46,11 @@ public class BuyBusChecker : MonoBehaviour
         }
         else
         {
-            TSU.ShowTapSellVideo();
+            if (GA.isActiveAndEnabled)
+                GA.ShowRewardedVideo();
+            else
+                TSU.ShowTapSellVideo();
+
             AS.PlayOneShot(GuiDef);
         }
     }
