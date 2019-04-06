@@ -2,6 +2,7 @@ Android
 PlayerPath?
 F:/Unity Project/Hamed Soleimani/Bus Parking/Bus Parking Ver.0.3.apk
 SceneListBegin?
+Assets/BusParking2/MHD/Splash/Scene/Splash.unity
 Assets/BusParking2/Scene/Bus/Loading Splash.unity
 Assets/BusParking2/Scene/Bus/Garage_Bus.unity
 Assets/BusParking2/Scene/Bus/Day_Bus.unity
@@ -270,3 +271,4 @@ e2da078abb56e0b1af2f4219f8b4214e Assembly-CSharp.dll:.SwitchingCameras
 0e1c1ea2cd964bf5febc3d5057e37802 Assembly-CSharp.dll:Pushe.Pushe
 9c075ac9c771168d36e5b25ec88c2978 Assembly-CSharp.dll:.TapSellUse
 00883d9ab2fde74ae497a853459f0a25 Assembly-CSharp.dll:.RewardedSound
+16ae74b11d4efc406718c2de4613047b Assembly-CSharp.dll:.Splash
