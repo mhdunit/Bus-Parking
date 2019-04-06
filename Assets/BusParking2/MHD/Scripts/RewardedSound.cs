@@ -9,10 +9,35 @@ public class RewardedSound : MonoBehaviour
     public Text totalCointText;
     public AudioSource AS;
     public AudioClip AC;
-   public void RewardedAudio()
+    public GameObject[] Stars;
+    int AwardedCoins;
+
+
+    public void RewardedAudioAndScore()
     {
+        for (int i = 0; i < Stars.Length; i++)
+        {
+            if (Stars[i].activeSelf) 
+            {
+                AwardedCoins = i + 1;
+            }
+        }
+
         AS.PlayOneShot(AC);
-        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + 1);
-        totalCointText.text = PlayerPrefs.GetInt("Coins").ToString();
+
+        if (Application.loadedLevelName == "Garage_Bus")
+        {
+            PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + 1);
+            totalCointText.text = PlayerPrefs.GetInt("Coins").ToString();
+        }
+           
+        else
+        {
+            AwardedCoins++;
+            totalCointText.text = "Awarded Coins : " + AwardedCoins;
+            PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + 1);
+        }
+            
+
     }
 }

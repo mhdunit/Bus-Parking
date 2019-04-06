@@ -28,6 +28,10 @@ public class Success : MonoBehaviour
 
     public VehicleType vehicleType;
 
+    public Text totalScoreSuccess, totalScorefailed;
+    public GoogleAds GA;
+    public TapSellUse TSU;
+
 
     // Activate parking place helper
     public void ActiveHelper()
@@ -42,6 +46,10 @@ public class Success : MonoBehaviour
         // Delay and find manager
         yield return new WaitForSeconds(.3f);
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<ParkingManager>();
+
+        totalScoreSuccess.text =  "Awarded Coins : " + PlayerPrefs.GetInt("Coins").ToString();
+
+        totalScorefailed.text = "Total Scores is : " + PlayerPrefs.GetInt("Coins").ToString();
     }
 
     // SuccessMenu continue button
@@ -76,6 +84,12 @@ public class Success : MonoBehaviour
     }
 
 
-
+    public void showRewardedVideoBasedOnAdsChecker()
+    {
+        if (GA.isActiveAndEnabled)
+            GA.ShowRewardedVideo();
+        else
+            TSU.ShowTapSellVideo();
+    }
 
 }

@@ -26,7 +26,7 @@ public class PauseMen : MonoBehaviour
 	public void Pause ()
 	{
 		PauseMenu.SetActive (true);
-		AllScore.text = "Total Score is :   "+PlayerPrefs.GetInt ("Coins").ToString ();
+		AllScore.text = "Total Score is :   " + PlayerPrefs.GetInt ("Coins").ToString ();
 		Time.timeScale = 0f;
 	}
 
