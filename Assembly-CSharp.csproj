@@ -65,8 +65,10 @@
     <Compile Include="Assets\BusParking2\MHD\Scripts\FixNexPrevButton.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\GarageCameraCinemachine.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\LoadLevel.cs" />
+    <Compile Include="Assets\BusParking2\MHD\Scripts\RewardedSound.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\SetSetting.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\SwitchingCameras.cs" />
+    <Compile Include="Assets\BusParking2\MHD\Scripts\TapSellUse.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\TermonalSelectManager.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\UpgradeSystem.cs" />
     <Compile Include="Assets\BusParking2\Scripts\CameraMove.cs" />
@@ -132,6 +134,13 @@
     <Compile Include="Assets\BusParking2\Standard Assets\Kino\Bloom\Bloom.cs" />
     <Compile Include="Assets\BusParking2\Textures\Effect\Screen\Parallax.cs" />
     <Compile Include="Assets\Pushe\Pushe.cs" />
+    <Compile Include="Assets\Tapsell\Tapsell.cs" />
+    <Compile Include="Assets\Tapsell\TapsellContinuationManager.cs" />
+    <Compile Include="Assets\Tapsell\TapsellEditor.cs" />
+    <Compile Include="Assets\Tapsell\TapsellMessageHandler.cs" />
+    <Compile Include="Assets\Tapsell\TapsellSettings.cs" />
+    <Compile Include="Assets\Tapsell\TapsellSimpleJSON.cs" />
+    <Compile Include="Assets\Tapsell\TapsellUpdateWindow.cs" />
     <None Include="Assets\BusParking2\Standard Assets\Projectors\Guidelines.txt" />
     <None Include="Assets\BusParking2\Scripts\PostEffects\DOF\SeparableWeightedBlurDof34.shader" />
     <None Include="Assets\BusParking2\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />

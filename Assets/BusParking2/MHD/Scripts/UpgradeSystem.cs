@@ -15,9 +15,7 @@ public class UpgradeSystem : MonoBehaviour
     int TotalScoreNumber,UpgradeScoreNumber,UpgradeID;
     public AudioSource AS;
     public AudioClip GuiDef, GuiUpgrade;
-
-
-
+    public TapSellUse TSU;
 
 
     void OnEnable()
@@ -176,7 +174,7 @@ public class UpgradeSystem : MonoBehaviour
         else
         {
             // Watch Video
-            print("Watch video");
+            TSU.ShowTapSellVideo();
             AS.PlayOneShot(GuiDef);
         }
     }

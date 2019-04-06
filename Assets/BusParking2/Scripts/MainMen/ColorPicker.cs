@@ -35,6 +35,8 @@ public class ColorPicker : MonoBehaviour {
 
 	public VehicleType vehicleType;
 
+    public TapSellUse TSU;
+
     void OnEnable()
     {
         totalScoreNumber = PlayerPrefs.GetInt("Coins");
@@ -103,7 +105,7 @@ public class ColorPicker : MonoBehaviour {
         else
         {
             // Watch Video
-            print("Watch Video");
+            TSU.ShowTapSellVideo();
             AS.PlayOneShot(GuiDef);
         }
     }
