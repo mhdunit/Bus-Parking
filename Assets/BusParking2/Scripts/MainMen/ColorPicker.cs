@@ -73,6 +73,7 @@ public class ColorPicker : MonoBehaviour {
                 TotalScore.text = totalScoreNumber.ToString();
                 ColorPrice = (PlayerPrefs.GetInt("BusID") * 10) + (id + 1) * 10;
                 ItemScore.text = ColorPrice.ToString();
+                totalScoreNumber = PlayerPrefs.GetInt("Coins");
         // if total score is bigget than color price
         if (totalScoreNumber >= ColorPrice)
         {

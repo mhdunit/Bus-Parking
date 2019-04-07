@@ -145,6 +145,7 @@ public class UpgradeSystem : MonoBehaviour
 
         UpgradeScoreNumber = (PlayerPrefs.GetInt("BusID") * 3) + ((((int)Upgrade.value) + 1) * 5);
             UpgradeScore.text = UpgradeScoreNumber.ToString();
+        TotalScoreNumber = PlayerPrefs.GetInt("Coins");
         if (TotalScoreNumber < UpgradeScoreNumber)
         {
             TotalScore.color = Color.red;
