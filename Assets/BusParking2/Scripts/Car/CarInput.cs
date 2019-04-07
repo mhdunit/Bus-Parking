@@ -39,6 +39,7 @@ public class CarInput : MonoBehaviour
 
 	// Helper arrow handler for acitivate ans deActivate;
 	[HideInInspector]public GameObject helperArrow;
+    public GameObject DirectionHelperText;
 
 	// Reversing alarm
 	[HideInInspector]public AudioSource reverseAlarm;
@@ -67,8 +68,12 @@ public class CarInput : MonoBehaviour
     // Find player after car spawned
     IEnumerator Start ()
 	{
-		
-		yield return new WaitForSeconds (.03f);
+        if (PlayerPrefs.GetInt("BusLevelID") != 0)
+            DirectionHelperText.SetActive(false);
+
+
+
+        yield return new WaitForSeconds (.03f);
 		helperArrow = GameObject.FindGameObjectWithTag ("Helper");
 		helperArrow.SetActive (false);
 		controllType = 0;
@@ -90,10 +95,18 @@ public class CarInput : MonoBehaviour
 		// Delay for car spawn
 		yield return new WaitForSeconds (.3f);
 
+        //MHD Tutorial Mission
+        if (PlayerPrefs.GetInt("BusLevelID") == 0)
+        {
+            helperArrow.SetActive(true);
+            Navigation.sprite = NavigationOn;
+            DirectionHelperText.SetActive(true);
+        }
+           
 
 
-		// Find car by tag
-		 carController = GameObject.FindGameObjectWithTag ("Player").GetComponent<CarController> ();
+        // Find car by tag
+        carController = GameObject.FindGameObjectWithTag ("Player").GetComponent<CarController> ();
 
 		// Game is now started
 		started = true;
