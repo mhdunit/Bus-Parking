@@ -16,7 +16,7 @@ public class AutomaticRewardedVideo : MonoBehaviour
             else
                 PlayerPrefs.SetInt("sucRewarded", PlayerPrefs.GetInt("sucRewarded") + 1);
 
-            if (PlayerPrefs.GetInt("sucRewarded") % 4 == 0)
+            if (PlayerPrefs.GetInt("sucRewarded") % 3 == 0)
             {
                 if (GA.isActiveAndEnabled)
                     GA.ShowRewardedVideo();
