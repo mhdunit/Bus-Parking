@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EntranceLanguage : MonoBehaviour
 {
+
+
     public enum Language
     {
         English,
@@ -11,6 +13,8 @@ public class EntranceLanguage : MonoBehaviour
     }
 
     public Language DefaultLanguage;
+
+
     // Start is called before the first frame update
     void Start()
     {
