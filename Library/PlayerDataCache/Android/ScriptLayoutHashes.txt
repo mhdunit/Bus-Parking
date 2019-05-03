@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-F:/Unity Project/Hamed Soleimani/Bus Parking/Bus Parking Ver.0.3.apk
+F:/Unity Project/Hamed Soleimani/Bus Parking/Bus Parking Ver.0.4.apk
 SceneListBegin?
 Assets/BusParking2/MHD/Splash/Scene/Splash.unity
 Assets/BusParking2/Scene/Bus/Loading Splash.unity
@@ -227,6 +227,7 @@ a15003d00f3b5257eefb00385d071abd Assembly-CSharp.dll:.TriggerFrontBack
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.BalaBar
 931f489e44eadf809e9310429c99dde5 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -275,3 +276,10 @@ c49634664e02aa54f206882ba43864d5 Assembly-CSharp.dll:.AutomaticRewardedVideo
 2792936179724025482dc04d68a47ca7 Cinemachine.dll:Cinemachine.CinemachineClearShot
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.CarLoader
 34665528cf8da97e082a230c8afb96c6 Assembly-CSharp.dll:LightingBox.ImageEffects.DepthOfFieldMobile
+be0a37c4e827473283ebea1c8baac05b Assembly-CSharp.dll:.CertificationManager
+61063a7bbc2655f4a15466a04f7901bc Assembly-CSharp.dll:.InputFiledConvert
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ConvertUIText
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ConvertTextMesh
+b0ec9f2c2996d7afbfb419dd1e8d8d7b Assembly-CSharp.dll:.Language
+99a2b54b1e4a21f693515cc17419f552 Assembly-CSharp.dll:.EntranceLanguage
+ccd6b4e07aaadda85cb1628e80a48155 Assembly-CSharp.dll:.LanguageChanger

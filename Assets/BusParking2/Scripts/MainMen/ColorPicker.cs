@@ -78,13 +78,19 @@ public class ColorPicker : MonoBehaviour {
         if (totalScoreNumber >= ColorPrice)
         {
             TotalScore.color = Color.green;
+            if (PlayerPrefs.GetString("Language") == "English")          
             Descripton.text = "Do you want to buy this Color ?";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                Descripton.text = "آیا میخواهید این رنگ رو خریداری کنید ؟".faConvert();
         }
         // if total score is smaller than color price
         else
         {
             TotalScore.color = Color.red;
-            Descripton.text = "No Enough Score \n Do You Want Some ?";
+            if (PlayerPrefs.GetString("Language") == "English")
+                Descripton.text = "No Enough Score. Do You Want Some ?";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                Descripton.text = "امتیاز کافی نداری . امتیاز میخوای ؟".faConvert();
         }
 
         BuyPanel.SetActive(true);

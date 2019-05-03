@@ -55,16 +55,29 @@ public class Success : MonoBehaviour
     // SuccessMenu continue button
     public void Continue()
     {
-        LoadingMenu.SetActive(true);
+
 
         if (vehicleType == VehicleType.Bus)
-            PlayerPrefs.SetInt("BusLevelID", PlayerPrefs.GetInt("BusLevelID") + 1);
-        if (vehicleType == VehicleType.Truck)
-            PlayerPrefs.SetInt("TruckLevelID", PlayerPrefs.GetInt("TruckLevelID") + 1);
-        if (vehicleType == VehicleType.Car)
-            PlayerPrefs.SetInt("CarLevelID", PlayerPrefs.GetInt("CarLevelID") + 1);
+        {
+            if (PlayerPrefs.GetInt("BusLevelID") != 35)
+            {
+                LoadingMenu.SetActive(true);
+                PlayerPrefs.SetInt("BusLevelID", PlayerPrefs.GetInt("BusLevelID") + 1);
+                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+            }
+            else
+            {
+                GetComponent<CertificationManager>().CertificationPanel.SetActive(true);
+                GetComponent<CertificationManager>().CertStamp.SetActive(true);
+            }
 
-        SceneManager.LoadSceneAsync  (SceneManager.GetActiveScene().name);
+        }
+        //if (vehicleType == VehicleType.Truck)
+        //    PlayerPrefs.SetInt("TruckLevelID", PlayerPrefs.GetInt("TruckLevelID") + 1);
+        //if (vehicleType == VehicleType.Car)
+        //    PlayerPrefs.SetInt("CarLevelID", PlayerPrefs.GetInt("CarLevelID") + 1);
+
+
     }
 
 
@@ -91,5 +104,17 @@ public class Success : MonoBehaviour
         else
             TSU.ShowTapSellVideo();
     }
-
+   public void CloseCertification()
+    {
+        if (PlayerPrefs.GetInt("BusLevelID") == 0)
+        {
+            GetComponent<CertificationManager>().CertificationPanel.SetActive(false);
+        }
+        else
+        {
+            GetComponent<CertificationManager>().CertificationPanel.SetActive(false);
+            LoadingMenu.SetActive(true);
+            SceneManager.LoadSceneAsync(garageName);
+        }
+    }
 }

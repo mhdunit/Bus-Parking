@@ -5,36 +5,30 @@ using UnityEngine;
 public class EntranceLanguage : MonoBehaviour
 {
 
-
-    public enum Language
+    public enum language
     {
         English,
         Farsi
     }
 
-    public Language DefaultLanguage;
-
+    public language DefaultLanguage;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (!PlayerPrefs.HasKey("Language"))
         {
-            if (DefaultLanguage == Language.English)
+            if (DefaultLanguage == language.English)
             {
                 PlayerPrefs.SetString("Language", "English");
             }
-            else if (DefaultLanguage == Language.Farsi)
+            else if (DefaultLanguage == language.Farsi)
             {
                 PlayerPrefs.SetString("Language", "Farsi");
             }
         }
        
     }
-
+    
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

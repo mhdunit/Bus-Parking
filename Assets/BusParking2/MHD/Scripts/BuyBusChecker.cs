@@ -24,12 +24,18 @@ public class BuyBusChecker : MonoBehaviour
         if (TotalScore >= BusScore)
         {
             TotalScoreBuyText.color = Color.green;
-            Description.text = "Do you want to buy this Bus ?";
+            if (PlayerPrefs.GetString("Language") == "English")
+                Description.text = "Do you want to buy this Bus ?";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                Description.text = "آیا میخوای این اتوبوس رو بخری ؟".faConvert();
         }
         else
         {
             TotalScoreBuyText.color = Color.red;
-            Description.text = "No Enough Score \n Do You Want Some ?";
+            if (PlayerPrefs.GetString("Language") == "English")
+                Description.text = "No Enough Score . Do You Want Some ?";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                Description.text = "امتیاز کافی نداری . امتیاز میخوای ؟".faConvert();
         }
     }
     public void BusByeOrNot()

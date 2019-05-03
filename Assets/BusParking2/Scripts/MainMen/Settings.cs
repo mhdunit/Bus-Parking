@@ -53,25 +53,35 @@ public class Settings : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Quality") == 0)
         {
-            qualityState.text = "Fastest";
+            if (PlayerPrefs.GetString("Language") == "English")
+                qualityState.text = "Fastest";
+           else if (PlayerPrefs.GetString("Language") == "Farsi")
+                qualityState.text = "خیلی سریع".faConvert();
+
             qualityState.color = Color.red;
         }
 		if (PlayerPrefs.GetInt ("Quality") == 3)
         {
-            qualityState.text = "Good";
+            if (PlayerPrefs.GetString("Language") == "English")
+                qualityState.text = "Good";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                qualityState.text = "خوب".faConvert();
             qualityState.color = new Color(0, 192, 255, 152);
         }
 			
 		if (PlayerPrefs.GetInt ("Quality") == 5)
         {
-            qualityState.text = "Fantastic";
+            if (PlayerPrefs.GetString("Language") == "English")
+                qualityState.text = "Fantastic";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                qualityState.text = "خارق العاده".faConvert();
             qualityState.color = Color.green;
         }
 			
 
 		if (PlayerPrefs.GetInt ("Resolution") == 0) {
 			PlayerPrefs.SetInt ("Resolution", 720);
-			resolutionState.text = "720P";
+			resolutionState.text = "720";
             resolutionState.color = new Color(0, 192, 255, 152);
 
         } else {
@@ -82,13 +92,13 @@ public class Settings : MonoBehaviour
             }
             if (PlayerPrefs.GetInt ("Resolution") == 720)
             {
-                resolutionState.text = "720P";
+                resolutionState.text = "720";
                 resolutionState.color = new Color(0, 192, 255, 152);
             }
 				
 			if (PlayerPrefs.GetInt ("Resolution") == 1080)
             {
-                resolutionState.text = "1080P";
+                resolutionState.text = "1080";
                 resolutionState.color = Color.green;
             }
 				
@@ -119,19 +129,28 @@ public class Settings : MonoBehaviour
 
 		if (id == 0)
         {
-            qualityState.text = "Fastest";
+            if (PlayerPrefs.GetString("Language") == "English")
+                qualityState.text = "Fastest";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                qualityState.text = "خیلی سریع".faConvert();
             qualityState.color = Color.red;
         }
 			
         if (id == 3)
         {
-            qualityState.text = "Good";
+            if (PlayerPrefs.GetString("Language") == "English")
+                qualityState.text = "Good";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                qualityState.text = "خوب".faConvert();
             qualityState.color = new Color(0, 192, 255, 152);
         }
 			
 		if (id == 5)
         {
-            qualityState.text = "Fantastic";
+            if (PlayerPrefs.GetString("Language") == "English")
+                qualityState.text = "Fantastic";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                qualityState.text = "خارق العاده".faConvert();
             qualityState.color = Color.green;
         }
 			
@@ -190,11 +209,39 @@ public class Settings : MonoBehaviour
             PlayerPrefs.SetInt("ColorEffects", 0);//0 = false;
             Camera.GetComponent<MobileColorGrading>().enabled = false;
         }
-			
+		
+    }
+    public void SetQualityText()
+    {
+        if (PlayerPrefs.GetInt("Quality") == 0)
+        {
+            if (PlayerPrefs.GetString("Language") == "English")
+                qualityState.text = "Fastest";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                qualityState.text = "خیلی سریع".faConvert();
+
+            qualityState.color = Color.red;
+        }
+        if (PlayerPrefs.GetInt("Quality") == 3)
+        {
+            if (PlayerPrefs.GetString("Language") == "English")
+                qualityState.text = "Good";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                qualityState.text = "خوب".faConvert();
+            qualityState.color = new Color(0, 192, 255, 152);
+        }
+
+        if (PlayerPrefs.GetInt("Quality") == 5)
+        {
+            if (PlayerPrefs.GetString("Language") == "English")
+                qualityState.text = "Fantastic";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                qualityState.text = "خارق العاده".faConvert();
+            qualityState.color = Color.green;
+        }
     }
 
-
-	IEnumerator SunShaft_Save ()
+    IEnumerator SunShaft_Save ()
 	{
 		yield return new WaitForSeconds (.3f);
 		if (SunShaft.isOn)

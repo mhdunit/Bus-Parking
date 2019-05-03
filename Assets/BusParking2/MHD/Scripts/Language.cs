@@ -38,6 +38,8 @@ public class Language : MonoBehaviour
         Farsi.color = Color.green;
         PlayerPrefs.SetString("Language", "Farsi");
 
+        //setQualityText
+
         onLanguageChange();
     }
 }

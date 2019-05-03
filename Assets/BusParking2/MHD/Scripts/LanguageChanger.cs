@@ -31,7 +31,7 @@ public class LanguageChanger : MonoBehaviour
         {
             for (int i = 0; i < LanguageText.Length; i++)
             {
-                LanguageText[i].text = FA[i];
+                LanguageText[i].text = FA[i].faConvert();
             }
         }
     }
@@ -48,7 +48,7 @@ public class LanguageChanger : MonoBehaviour
         {
             for (int i = 0; i < LanguageText.Length; i++)
             {
-                LanguageText[i].text = FA[i];
+                LanguageText[i].text = FA[i].faConvert();
             }
         }
     }

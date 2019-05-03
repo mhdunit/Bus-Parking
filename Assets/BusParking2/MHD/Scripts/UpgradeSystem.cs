@@ -30,7 +30,11 @@ public class UpgradeSystem : MonoBehaviour
         Power.value = PlayerPrefs.GetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Power");
         if (Power.value == 10)
         {
-            LevelNumber[0].text = "Max";
+            if (PlayerPrefs.GetString("Language") == "English")
+                LevelNumber[0].text = "Max";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                LevelNumber[0].text = "حداکثر".faConvert();
+
             LevelNumber[0].color = Color.green;
             LevelMax[0].SetActive(true);
         }
@@ -46,7 +50,10 @@ public class UpgradeSystem : MonoBehaviour
         Speed.value = PlayerPrefs.GetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Speed");
         if (Speed.value == 10)
         {
-            LevelNumber[1].text = "Max";
+            if (PlayerPrefs.GetString("Language") == "English")
+                LevelNumber[0].text = "Max";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                LevelNumber[0].text = "حداکثر".faConvert();
             LevelNumber[1].color = Color.green;
             LevelMax[1].SetActive(true);
         }
@@ -63,7 +70,10 @@ public class UpgradeSystem : MonoBehaviour
         Steer.value = PlayerPrefs.GetInt("UpgradeBus" + PlayerPrefs.GetInt("BusID") + "Steer");
         if (Steer.value == 10)
         {
-            LevelNumber[2].text = "Max";
+            if (PlayerPrefs.GetString("Language") == "English")
+                LevelNumber[0].text = "Max";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                LevelNumber[0].text = "حداکثر".faConvert();
             LevelNumber[2].color = Color.green;
             LevelMax[2].SetActive(true);
         }
@@ -90,7 +100,10 @@ public class UpgradeSystem : MonoBehaviour
                 LevelNumber[0].text = Power.value.ToString();
             else
             {
-                LevelNumber[0].text = "Max";
+                if (PlayerPrefs.GetString("Language") == "English")
+                    LevelNumber[0].text = "Max";
+                else if (PlayerPrefs.GetString("Language") == "Farsi")
+                    LevelNumber[0].text = "حداکثر".faConvert();
                 LevelNumber[0].color = Color.green;
                 LevelMax[0].SetActive(true);
             }
@@ -108,7 +121,10 @@ public class UpgradeSystem : MonoBehaviour
                 LevelNumber[1].text = Speed.value.ToString();
             else
             {
-                LevelNumber[1].text = "Max";
+                if (PlayerPrefs.GetString("Language") == "English")
+                    LevelNumber[0].text = "Max";
+                else if (PlayerPrefs.GetString("Language") == "Farsi")
+                    LevelNumber[0].text = "حداکثر".faConvert();
                 LevelNumber[1].color = Color.green;
                 LevelMax[1].SetActive(true);
             }
@@ -126,7 +142,10 @@ public class UpgradeSystem : MonoBehaviour
                 LevelNumber[2].text = Steer.value.ToString();
             else
             {
-                LevelNumber[2].text = "Max";
+                if (PlayerPrefs.GetString("Language") == "English")
+                    LevelNumber[0].text = "Max";
+                else if (PlayerPrefs.GetString("Language") == "Farsi")
+                    LevelNumber[0].text = "حداکثر".faConvert();
                 LevelNumber[2].color = Color.green;
                 LevelMax[2].SetActive(true);
             }
@@ -149,12 +168,19 @@ public class UpgradeSystem : MonoBehaviour
         if (TotalScoreNumber < UpgradeScoreNumber)
         {
             TotalScore.color = Color.red;
-            Description.text = "No Enough Score \n Do You Want Some ?";
+            if (PlayerPrefs.GetString("Language") == "English")
+                Description.text = "No Enough Score Do You Want Some ?";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                Description.text = "امتیاز کافی نداری . امتیاز میخوای ؟".faConvert();
+            
         }
         else
         {   
             TotalScore.color = Color.green;
-            Description.text = "Do you want to buy this Upgrade?";
+            if (PlayerPrefs.GetString("Language") == "English")
+                Description.text = "Do you want to buy this Upgrade?";
+            else if (PlayerPrefs.GetString("Language") == "Farsi")
+                Description.text = "آیا میخوای این ارتقا رو انجام بدی ؟".faConvert();
         }
            
     }

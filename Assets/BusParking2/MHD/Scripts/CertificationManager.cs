@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CertificationManager : MonoBehaviour
 {
-    public GameObject CertificationPanel, CertStamp,Success;
+    public GameObject CertificationPanel, CertStamp;
     // Start is called before the first frame update
     void Start()
     {
