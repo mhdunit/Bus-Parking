@@ -200,9 +200,12 @@ public class ParkingManager : MonoBehaviour
 
 				if (CollisionCount == 0) {// Score given to player when collision detection is 0
 					PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + CollisionScore0);
-					// Show earned score on finish menu
-					FinishScoreText.text = "Awarded Coins : "+CollisionScore0.ToString ();
-					star3.SetActive (true);
+                    // Show earned score on finish menu
+                    if (PlayerPrefs.GetString("Language") == "English")
+                        FinishScoreText.text = "Awarded Coins : "+CollisionScore0.ToString ();
+                    else if (PlayerPrefs.GetString("Language") == "Farsi")
+                        FinishScoreText.text = "  :  سکه جایزه".faConvert() + CollisionScore0.ToString();
+                    star3.SetActive (true);
 					As.clip = clipSucces;
 					As.Play ();
 					if (vType == VehicleType.Car) {
@@ -257,9 +260,12 @@ public class ParkingManager : MonoBehaviour
 				}
 				if (CollisionCount == 1) {
 					PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + CollisionScore1);
-				
-					FinishScoreText.text = "Awarded Coins : "+CollisionScore1.ToString ();
-					star2.SetActive (true);
+
+                    if (PlayerPrefs.GetString("Language") == "English")
+                        FinishScoreText.text = "Awarded Coins : " + CollisionScore1.ToString();
+                    else if (PlayerPrefs.GetString("Language") == "Farsi")
+                        FinishScoreText.text = "  :  سکه جایزه".faConvert() + CollisionScore1.ToString();
+                    star2.SetActive (true);
 					As.clip = clipSucces; 
 					As.Play ();
 					if (vType == VehicleType.Car) {
@@ -314,9 +320,12 @@ public class ParkingManager : MonoBehaviour
 				}
 				if (CollisionCount == 2) {
 					PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + CollisionScore2);
-				
-					FinishScoreText.text = "Awarded Coins : "+CollisionScore2.ToString ();
-					star1.SetActive (true);
+
+                    if (PlayerPrefs.GetString("Language") == "English")
+                        FinishScoreText.text = "Awarded Coins : " + CollisionScore2.ToString();
+                    else if (PlayerPrefs.GetString("Language") == "Farsi")
+                        FinishScoreText.text = "  :  سکه جایزه".faConvert() + CollisionScore2.ToString();
+                    star1.SetActive (true);
 					As.clip = clipSucces;
 					As.Play ();
 					if (vType == VehicleType.Car) {
@@ -372,9 +381,12 @@ public class ParkingManager : MonoBehaviour
 
 				if (CollisionCount == 3) {
 					PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + CollisionScore3);
-				
-					FinishScoreText.text = "Awarded Coins : "+CollisionScore3.ToString ();
-					As.clip = clipLost;
+
+                    if (PlayerPrefs.GetString("Language") == "English")
+                        FinishScoreText.text = "Awarded Coins : " + CollisionScore3.ToString();
+                    else if (PlayerPrefs.GetString("Language") == "Farsi")
+                        FinishScoreText.text = "  :  سکه جایزه".faConvert() + CollisionScore3.ToString();
+                    As.clip = clipLost;
 					As.Play ();
 					if (vType == VehicleType.Car) {
 						if (PlayerPrefs.GetFloat ("CarMinutes" + PlayerPrefs.GetInt ("CarLevelID").ToString ()) == minutes) {
