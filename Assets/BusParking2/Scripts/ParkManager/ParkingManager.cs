@@ -567,10 +567,12 @@ public class ParkingManager : MonoBehaviour
 
 		if (secn < 10)
 			secS = "0" + Mathf.Floor(secn).ToString ();
+        if (PlayerPrefs.GetString("Language") == "English")
+            return "Best Time : "+ minS + ":"+secS;
+        else
+            return "  :  بهترین زمان".faConvert() + minS + ":" + secS;
 
-		return "Best Time : "+ minS + ":"+secS;
-
-	}
+    }
 
 	string ReadCurrentTIme()
 	{
@@ -590,7 +592,11 @@ public class ParkingManager : MonoBehaviour
 		else
 			sec = (Mathf.FloorToInt(seconds)).ToString ();
 
+        if (PlayerPrefs.GetString("Language") == "English")
+            return "CurrentTime : "+min + ":"+ sec;
+        else
+            return "  :  زمان فعلی".faConvert() + min + ":" + sec;
 
-		return "CurrentTime : "+min + ":"+ sec;
-	}
+
+    }
 }

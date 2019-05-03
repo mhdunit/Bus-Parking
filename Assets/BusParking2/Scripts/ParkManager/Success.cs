@@ -46,10 +46,20 @@ public class Success : MonoBehaviour
         // Delay and find manager
         yield return new WaitForSeconds(.3f);
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<ParkingManager>();
+        if (PlayerPrefs.GetString("Language") == "English")
+        {
+            totalScoreSuccess.text = "Awarded Coins : " + PlayerPrefs.GetInt("Coins").ToString();
 
-        totalScoreSuccess.text =  "Awarded Coins : " + PlayerPrefs.GetInt("Coins").ToString();
+            totalScorefailed.text = "Total Scores is : " + PlayerPrefs.GetInt("Coins").ToString();
 
-        totalScorefailed.text = "Total Scores is : " + PlayerPrefs.GetInt("Coins").ToString();
+        }else if (PlayerPrefs.GetString("Language") == "Farsi")
+        {
+            totalScoreSuccess.text = "  :  سکه جایزه".faConvert() + PlayerPrefs.GetInt("Coins").ToString();
+
+            totalScorefailed.text = "  :  امتیاز کلی شما".faConvert() + PlayerPrefs.GetInt("Coins").ToString();
+        }
+
+
     }
 
     // SuccessMenu continue button

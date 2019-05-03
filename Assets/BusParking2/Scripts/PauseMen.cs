@@ -26,8 +26,12 @@ public class PauseMen : MonoBehaviour
 	public void Pause ()
 	{
 		PauseMenu.SetActive (true);
-		AllScore.text = "Total Score is :   " + PlayerPrefs.GetInt ("Coins").ToString ();
-		Time.timeScale = 0f;
+        if (PlayerPrefs.GetString("Language") == "English")
+            AllScore.text = "Total Score is :   " + PlayerPrefs.GetInt ("Coins").ToString ();
+        else if (PlayerPrefs.GetString("Language") == "Farsi")
+            AllScore.text = "  :  امتیاز کلی شما".faConvert() + PlayerPrefs.GetInt("Coins").ToString();
+
+        Time.timeScale = 0f;
 	}
 
 	public void Resume ()
