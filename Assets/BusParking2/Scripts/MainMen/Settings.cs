@@ -169,13 +169,13 @@ public class Settings : MonoBehaviour
 			
 		if (id == 720)
         {
-            resolutionState.text = "720P";
+            resolutionState.text = "720";
             resolutionState.color = new Color(0, 192, 255, 152);
         }
 			
 		if (id == 1080)
         {
-            resolutionState.text = "1080P";
+            resolutionState.text = "1080";
             resolutionState.color = Color.green;
         }
 			

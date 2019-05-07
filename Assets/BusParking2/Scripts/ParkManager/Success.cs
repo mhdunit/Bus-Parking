@@ -21,6 +21,8 @@ public class Success : MonoBehaviour
     //public Text LoadingTXT;
     public GameObject LoadingMenu;
 
+    public Font English, Farsi;
+
     // Parking Manager handler
     [HideInInspector] public ParkingManager manager;
 
@@ -48,14 +50,16 @@ public class Success : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<ParkingManager>();
         if (PlayerPrefs.GetString("Language") == "English")
         {
+            totalScoreSuccess.font = English;
             totalScoreSuccess.text = "Awarded Coins : " + PlayerPrefs.GetInt("Coins").ToString();
-
+            totalScorefailed.font = English;
             totalScorefailed.text = "Total Scores is : " + PlayerPrefs.GetInt("Coins").ToString();
 
         }else if (PlayerPrefs.GetString("Language") == "Farsi")
         {
+                totalScoreSuccess.font = Farsi;
             totalScoreSuccess.text = "  :  سکه جایزه".faConvert() + PlayerPrefs.GetInt("Coins").ToString();
-
+            totalScorefailed.font = Farsi;
             totalScorefailed.text = "  :  امتیاز کلی شما".faConvert() + PlayerPrefs.GetInt("Coins").ToString();
         }
 

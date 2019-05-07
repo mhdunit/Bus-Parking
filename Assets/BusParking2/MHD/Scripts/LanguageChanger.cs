@@ -7,6 +7,7 @@ public class LanguageChanger : MonoBehaviour
 {
     public Text[] LanguageText;
     public string[] EN, FA;
+    public Font English, Farsi;
     // Start is called before the first frame update
 
     void OnEnable()
@@ -24,14 +25,18 @@ public class LanguageChanger : MonoBehaviour
         {
             for (int i = 0; i < LanguageText.Length; i++)
             {
+                LanguageText[i].font = English;
                 LanguageText[i].text = EN[i];
+                LanguageText[i].fontStyle = FontStyle.Bold;
             }
         }
         else if (PlayerPrefs.GetString("Language") == "Farsi")
         {
             for (int i = 0; i < LanguageText.Length; i++)
             {
+                LanguageText[i].font = Farsi;
                 LanguageText[i].text = FA[i].faConvert();
+                LanguageText[i].fontStyle = FontStyle.Normal;
             }
         }
     }
@@ -41,14 +46,18 @@ public class LanguageChanger : MonoBehaviour
         {
             for (int i = 0; i < LanguageText.Length; i++)
             {
+                LanguageText[i].font = English;
                 LanguageText[i].text = EN[i];
+                LanguageText[i].fontStyle = FontStyle.Bold;
             }
         }
         else if (PlayerPrefs.GetString("Language") == "Farsi")
         {
             for (int i = 0; i < LanguageText.Length; i++)
             {
+                LanguageText[i].font = Farsi;
                 LanguageText[i].text = FA[i].faConvert();
+                LanguageText[i].fontStyle = FontStyle.Normal;
             }
         }
     }

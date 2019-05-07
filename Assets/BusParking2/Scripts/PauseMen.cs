@@ -20,6 +20,7 @@ public class PauseMen : MonoBehaviour
 
 	public GameObject PauseMenu,LoadingMenu;
 	public Text  AllScore;
+    public Font English, Farsi;
 
 	public string garageName;
 
@@ -27,9 +28,17 @@ public class PauseMen : MonoBehaviour
 	{
 		PauseMenu.SetActive (true);
         if (PlayerPrefs.GetString("Language") == "English")
-            AllScore.text = "Total Score is :   " + PlayerPrefs.GetInt ("Coins").ToString ();
+        {
+            AllScore.font = English;
+            AllScore.text = "Total Score is :   " + PlayerPrefs.GetInt("Coins").ToString();
+        }
+            
         else if (PlayerPrefs.GetString("Language") == "Farsi")
+        {
+            AllScore.font = Farsi;
             AllScore.text = "  :  امتیاز کلی شما".faConvert() + PlayerPrefs.GetInt("Coins").ToString();
+        }
+           
 
         Time.timeScale = 0f;
 	}

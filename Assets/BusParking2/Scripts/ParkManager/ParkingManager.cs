@@ -74,7 +74,7 @@ public class ParkingManager : MonoBehaviour
 	//---------------------------------------------------------------------------
 	public GameObject Helper;
     //---------------------------------------------------------------------------
-   
+    //public Font English, Farsi;
 
     //This is alarm sound when collid with something
     public AudioSource AlarmSound;
@@ -100,7 +100,9 @@ public class ParkingManager : MonoBehaviour
 	public Text bestTime,currentTime;
 
 
-	public VehicleType vType;
+
+
+    public VehicleType vType;
 
 
 
@@ -202,9 +204,17 @@ public class ParkingManager : MonoBehaviour
 					PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + CollisionScore0);
                     // Show earned score on finish menu
                     if (PlayerPrefs.GetString("Language") == "English")
-                        FinishScoreText.text = "Awarded Coins : "+CollisionScore0.ToString ();
+                    {
+                      //  FinishScoreText.font = English;
+                        FinishScoreText.text = "Awarded Coins : " + CollisionScore0.ToString();
+                    }
+                        
                     else if (PlayerPrefs.GetString("Language") == "Farsi")
+                    {
+                       // FinishScoreText.font = Farsi;
                         FinishScoreText.text = "  :  سکه جایزه".faConvert() + CollisionScore0.ToString();
+                    }
+                       
                     star3.SetActive (true);
 					As.clip = clipSucces;
 					As.Play ();
@@ -262,9 +272,17 @@ public class ParkingManager : MonoBehaviour
 					PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + CollisionScore1);
 
                     if (PlayerPrefs.GetString("Language") == "English")
+                    {
+                       // FinishScoreText.font = English;
                         FinishScoreText.text = "Awarded Coins : " + CollisionScore1.ToString();
+                    }
+                       
                     else if (PlayerPrefs.GetString("Language") == "Farsi")
+                    {
+                      //  FinishScoreText.font = Farsi;
                         FinishScoreText.text = "  :  سکه جایزه".faConvert() + CollisionScore1.ToString();
+                    }
+                        
                     star2.SetActive (true);
 					As.clip = clipSucces; 
 					As.Play ();
@@ -322,9 +340,17 @@ public class ParkingManager : MonoBehaviour
 					PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + CollisionScore2);
 
                     if (PlayerPrefs.GetString("Language") == "English")
+                    {
+                     //   FinishScoreText.font = English;
                         FinishScoreText.text = "Awarded Coins : " + CollisionScore2.ToString();
+                    }
+                        
                     else if (PlayerPrefs.GetString("Language") == "Farsi")
+                    {
+                      //  FinishScoreText.font = Farsi;
                         FinishScoreText.text = "  :  سکه جایزه".faConvert() + CollisionScore2.ToString();
+                    }
+                       
                     star1.SetActive (true);
 					As.clip = clipSucces;
 					As.Play ();
@@ -383,9 +409,17 @@ public class ParkingManager : MonoBehaviour
 					PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + CollisionScore3);
 
                     if (PlayerPrefs.GetString("Language") == "English")
+                    {
+                       // FinishScoreText.font = English;
                         FinishScoreText.text = "Awarded Coins : " + CollisionScore3.ToString();
+                    }
+                       
                     else if (PlayerPrefs.GetString("Language") == "Farsi")
+                    {
+                      //  FinishScoreText.font = Farsi;
                         FinishScoreText.text = "  :  سکه جایزه".faConvert() + CollisionScore3.ToString();
+                    }
+                       
                     As.clip = clipLost;
 					As.Play ();
 					if (vType == VehicleType.Car) {
@@ -580,6 +614,7 @@ public class ParkingManager : MonoBehaviour
 		if (secn < 10)
 			secS = "0" + Mathf.Floor(secn).ToString ();
         if (PlayerPrefs.GetString("Language") == "English")
+
             return "Best Time : "+ minS + ":"+secS;
         else
             return "  :  بهترین زمان".faConvert() + minS + ":" + secS;
