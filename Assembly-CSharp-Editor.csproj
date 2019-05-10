@@ -69,8 +69,12 @@
     <Compile Include="Assets\BusParking2\Standard Assets\Kino\Bloom\Editor\BloomEditor.cs" />
     <Compile Include="Assets\BusParking2\Standard Assets\Kino\Bloom\Editor\BloomGraphDrawer.cs" />
     <Compile Include="Assets\GoogleMobileAds\Editor\PListProcessor.cs" />
-    <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.102.0.txt" />
+    <Compile Include="Assets\OneSignal\Editor\OneSignalEditorCheckUpdateScript.cs" />
+    <Compile Include="Assets\OneSignal\Editor\OneSignalEditorScript_Android.cs" />
+    <Compile Include="Assets\OneSignal\Editor\PostProcessBuildPlayer_iOS.cs" />
+    <None Include="Assets\OneSignal\Editor\OneSignalDependencies.xml" />
     <None Include="Assets\Pushe\Editor\PusheDependencies.xml" />
+    <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.110.0.txt" />
     <None Include="Assets\GoogleMobileAds\Editor\GoogleMobileAdsDependencies.xml" />
     <Reference Include="Cinemachine">
       <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
@@ -333,17 +337,8 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.102.0">
-      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.102.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.102.0">
-      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.102.0.dll</HintPath>
-    </Reference>
     <Reference Include="Google.VersionHandler">
       <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.102.0">
-      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.102.0.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -353,6 +348,18 @@
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
       <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.IOSResolver_v1.2.110.0">
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.110.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.110.0">
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.110.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver_v1.2.110.0">
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.110.0.dll</HintPath>
+    </Reference>
+    <Reference Include="OneSignalSDK_WP_WNS">
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/OneSignal/Platforms/OneSignalSDK_WP_WNS.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>H:/Unity Technologies/Unity/2018.3.14f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

@@ -73,6 +73,7 @@
     <Compile Include="Assets\BusParking2\MHD\Scripts\Language.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\LanguageChanger.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\LoadLevel.cs" />
+    <Compile Include="Assets\BusParking2\MHD\Scripts\OneSignalPushNotification.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\RewardedSound.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\SetSetting.cs" />
     <Compile Include="Assets\BusParking2\MHD\Scripts\SetTotalScoreFix.cs" />
@@ -190,6 +191,14 @@
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardBasedVideoAdClient.cs" />
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardedAdClient.cs" />
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Utils.cs" />
+    <Compile Include="Assets\OneSignal\Example\GameControllerExample.cs" />
+    <Compile Include="Assets\OneSignal\src\MiniJSON.cs" />
+    <Compile Include="Assets\OneSignal\src\OneSignal.cs" />
+    <Compile Include="Assets\OneSignal\src\OneSignalAndroid.cs" />
+    <Compile Include="Assets\OneSignal\src\OneSignalIOS.cs" />
+    <Compile Include="Assets\OneSignal\src\OneSignalPlatform.cs" />
+    <Compile Include="Assets\OneSignal\src\OneSignalPlatformHelper.cs" />
+    <Compile Include="Assets\OneSignal\src\OneSignalWPWNS.cs" />
     <Compile Include="Assets\Pushe\Pushe.cs" />
     <Compile Include="Assets\Tapsell\Tapsell.cs" />
     <Compile Include="Assets\Tapsell\TapsellContinuationManager.cs" />
@@ -448,6 +457,9 @@
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
       <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="OneSignalSDK_WP_WNS">
+      <HintPath>F:/Unity Project/Hamed Soleimani/Bus Parking/Assets/OneSignal/Platforms/OneSignalSDK_WP_WNS.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>H:/Unity Technologies/Unity/2018.3.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

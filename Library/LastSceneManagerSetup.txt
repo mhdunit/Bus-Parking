@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/BusParking2/Scene/Bus/Garage_Bus.unity
+- path: Assets/BusParking2/Scene/Bus/Loading Splash.unity
   isLoaded: 1
   isActive: 1
