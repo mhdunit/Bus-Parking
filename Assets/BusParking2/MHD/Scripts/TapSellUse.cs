@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TapsellSDK;
+//using TapsellSDK;
 using System;
 using UnityEngine.UI;
 
 
 public class TapSellUse : MonoBehaviour {
-    TapsellAd ad;
+   // TapsellAd ad;
     public string TapSellKey;
     public string VideoZoneID;
     //  public Menu2 m2;
@@ -27,7 +27,7 @@ public class TapSellUse : MonoBehaviour {
         Destroy(this.gameObject);
     }
     void Start () {
-        Tapsell.initialize(TapSellKey);
+        //Tapsell.initialize(TapSellKey);
         RequestTapSellVideo();
         print("RequestTapSellVideo");
     }
@@ -41,69 +41,69 @@ public class TapSellUse : MonoBehaviour {
     public void RequestTapSellVideo()
     {
 
-        Tapsell.requestAd(VideoZoneID, false,
-    (TapsellAd result) => {
-        // onAdAvailable
-        Debug.Log("Action: onAdAvailable");
-        ad = result; // store this to show the ad later
-    },
+//        Tapsell.requestAd(VideoZoneID, false,
+//    (TapsellAd result) => {
+//        // onAdAvailable
+//        Debug.Log("Action: onAdAvailable");
+//        ad = result; // store this to show the ad later
+//    },
 
-    (string zoneId) => {
-        // onNoAdAvailable
-        Debug.Log("No Ad Available");
-    },
+//    (string zoneId) => {
+//        // onNoAdAvailable
+//        Debug.Log("No Ad Available");
+//    },
 
-    (TapsellError error) => {
-        // onError
-        Debug.Log(error.error);
-        RequestTapSellVideo();
-    },
+//    (TapsellError error) => {
+//        // onError
+//        Debug.Log(error.error);
+//        RequestTapSellVideo();
+//    },
 
-    (string zoneId) => {
-        // onNoNetwork
-        Debug.Log("No Network");
-    },
+//    (string zoneId) => {
+//        // onNoNetwork
+//        Debug.Log("No Network");
+//    },
 
-    (TapsellAd result) => {
-        // onExpiring
+//    (TapsellAd result) => {
+//        // onExpiring
         
-        Debug.Log("Expiring");
-        // this ad is expired, you must download a new ad for this zone
-        RequestTapSellVideo();
-    }
+//        Debug.Log("Expiring");
+//        // this ad is expired, you must download a new ad for this zone
+//        RequestTapSellVideo();
+//    }
 
-);
+//);
 
-        SetRewardVideo();
+//        SetRewardVideo();
     }
 
     public void ShowTapSellVideo()
     {
-        print("ShowTapSellVideo");
-        TapsellShowOptions showOptions = new TapsellShowOptions();
-        showOptions.backDisabled = false;
-        showOptions.immersiveMode = false;
-        showOptions.rotationMode = TapsellShowOptions.ROTATION_UNLOCKED;
-        showOptions.showDialog = true;
-        Tapsell.showAd(ad, showOptions);
-        RequestTapSellVideo();
+        //print("ShowTapSellVideo");
+        //TapsellShowOptions showOptions = new TapsellShowOptions();
+        //showOptions.backDisabled = false;
+        //showOptions.immersiveMode = false;
+        //showOptions.rotationMode = TapsellShowOptions.ROTATION_UNLOCKED;
+        //showOptions.showDialog = true;
+        //Tapsell.showAd(ad, showOptions);
+        //RequestTapSellVideo();
     }
 
     void SetRewardVideo()
     {
-        Tapsell.setRewardListener((TapsellAdFinishedResult result) =>
-        {
-                if (result.completed == true)
-                {
+//        Tapsell.setRewardListener((TapsellAdFinishedResult result) =>
+//        {
+//                if (result.completed == true)
+//                {
                                  
-                RewardedAnim.SetTrigger("Set Reward Trigger");
-                RequestTapSellVideo();
+//                RewardedAnim.SetTrigger("Set Reward Trigger");
+//                RequestTapSellVideo();
                 
-            }
-            // you may give rewards to user if result.completed and
-            // result.rewarded are both true
-        }
-);
+//            }
+//            // you may give rewards to user if result.completed and
+//            // result.rewarded are both true
+//        }
+//);
     }
     
 

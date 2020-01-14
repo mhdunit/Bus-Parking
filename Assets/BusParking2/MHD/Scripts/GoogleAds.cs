@@ -3,6 +3,7 @@ using System.Collections;
 using GoogleMobileAds.Api;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GoogleAds : MonoBehaviour {
 
@@ -36,9 +37,17 @@ public class GoogleAds : MonoBehaviour {
         //end event
 
 
-        
+        if (Application.loadedLevelName == "Garage_Bus")
+        {
+            RequestRewardBasedVideo();
+        }
+        else
+        {
+            RequestInterstitial();
+            RequestRewardBasedVideo();
+        }
 
-        RequestRewardBasedVideo();
+        
 
 
     }
@@ -71,7 +80,7 @@ public class GoogleAds : MonoBehaviour {
     public void RequestInterstitial()
     {
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-1957678521576263/6051404639";
+        string adUnitId = "ca-app-pub-1957678521576263/5988824475";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-1957678521576263/1481604233";
 #else

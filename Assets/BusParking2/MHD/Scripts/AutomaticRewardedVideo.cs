@@ -9,28 +9,32 @@ public class AutomaticRewardedVideo : MonoBehaviour
     public TapSellUse TSU;
     void OnEnable()
     {
-        if (IsSuccess)
-        {
-            if (!PlayerPrefs.HasKey("sucRewarded"))
-                PlayerPrefs.SetInt("sucRewarded", 1);
-            else
-                PlayerPrefs.SetInt("sucRewarded", PlayerPrefs.GetInt("sucRewarded") + 1);
+        //if (IsSuccess)
+        //{
+        //    if (!PlayerPrefs.HasKey("sucRewarded"))
+        //        PlayerPrefs.SetInt("sucRewarded", 1);
+        //    else
+        //        PlayerPrefs.SetInt("sucRewarded", PlayerPrefs.GetInt("sucRewarded") + 1);
 
-            if (PlayerPrefs.GetInt("sucRewarded") % 3 == 0)
-            {
-                if (GA.isActiveAndEnabled)
-                    GA.ShowRewardedVideo();
-                else
-                    TSU.ShowTapSellVideo();
-            }
-        }
-        else
+        //    if (PlayerPrefs.GetInt("sucRewarded") % 3 == 0)
+        //    {
+        //        if (GA.isActiveAndEnabled)
+        //            GA.ShowRewardedVideo();
+        //        else
+        //            TSU.ShowTapSellVideo();
+        //    }
+        //}
+        //else
+        //{
+        if (GA.isActiveAndEnabled) 
         {
-            if (GA.isActiveAndEnabled)
-                GA.ShowRewardedVideo();
-            else
-                TSU.ShowTapSellVideo();
+            print("GA.ShowInterstitial");
+            GA.ShowInterstitial();
         }
+            
+        else
+            TSU.ShowTapSellVideo();
+        //}
         
     }
 }

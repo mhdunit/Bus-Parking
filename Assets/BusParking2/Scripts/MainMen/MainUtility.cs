@@ -15,7 +15,6 @@ using UnityEngine.SceneManagement;
 
 public class MainUtility : MonoBehaviour
 {
-	
 	public GameObject Loading;
 
 	public GameObject MainMenuOBJ, CarSelectOBJ;
@@ -79,13 +78,13 @@ public class MainUtility : MonoBehaviour
 #if UNITY_IOS
         Application.Quit();
 #elif UNITY_ANDROID
-        System.Diagnostics.Process.GetCurrentProcess().Kill();
+		Application.Quit();
 #elif UNITY_EDITOR
        Application.Quit();
 #endif
 
 
-    }
+	}
 
     public void SetTrue (GameObject target)
 	{

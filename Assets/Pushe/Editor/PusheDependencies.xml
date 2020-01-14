@@ -32,7 +32,7 @@
       </repositories>
     </androidPackage>
 	
-	<androidPackage spec="co.ronash.android:pushe-base:1.6.+">
+	<androidPackage spec="co.ronash.android:pushe-base:1.6.3">
       <repositories>
         <repository>https://jcenter.bintray.com</repository>
       </repositories>
@@ -47,9 +47,9 @@
 	<androidPackage spec="com.google.android.gms:play-services-location:16.0.0" />
 	
 	
-	<androidPackage spec="android-job-1.2.4.aar">
+	<androidPackage spec="com.evernote:android-job:1.2.6">
 		<repositories>
-        <repository>Assets/Pushe/libs</repository>
+        <repository>https://maven.google.com</repository>
       </repositories>
 	</androidPackage>
 	

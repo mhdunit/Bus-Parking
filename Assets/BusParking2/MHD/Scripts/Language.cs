@@ -7,7 +7,7 @@ public class Language : MonoBehaviour
 {
     public delegate void LanguageAction();
     public static event LanguageAction onLanguageChange;
-
+    public CarSelect CS;
     public Text English, Farsi;
 
     void Start()
@@ -26,6 +26,7 @@ public class Language : MonoBehaviour
     }
     public void EnglishSelected()
     {
+        StartCoroutine(CS.BusAndCarPriceWithDelay());
         English.color = Color.green;
         Farsi.color = Color.white;
         PlayerPrefs.SetString("Language","English");
@@ -34,6 +35,7 @@ public class Language : MonoBehaviour
     }
     public void FarsiSelected()
     {
+        StartCoroutine(CS.BusAndCarPriceWithDelay());
         English.color = Color.white;
         Farsi.color = Color.green;
         PlayerPrefs.SetString("Language", "Farsi");

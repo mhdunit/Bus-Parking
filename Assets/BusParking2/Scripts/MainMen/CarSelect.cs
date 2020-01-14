@@ -35,7 +35,7 @@ public class CarSelect : MonoBehaviour
 	public GameObject Lock, Shop, Buy;
 
 	// Selected car ID
-	int ID;
+	public int ID;
 
 	//TotalScore text, Car value text
 	public Text TotalScore, CarValue;
@@ -71,12 +71,10 @@ public class CarSelect : MonoBehaviour
 
 		// Instantiate last selected car by saved ID
 		Instantiate (cars [ID], point.position, point.rotation);
+		//StartCoroutine(BusAndCarPriceWithDelay());
 
-		// Update total score text
-		TotalScore.text = PlayerPrefs.GetInt ("Coins").ToString ();
-
-		// Update current car value text
-		CarValue.text = Values [ID].ToString ();
+		
+		
 
 
 		// Update current car is locked or not
@@ -108,8 +106,17 @@ public class CarSelect : MonoBehaviour
 			}
 		}
 	}
+	public IEnumerator BusAndCarPriceWithDelay()
+	{
+		yield return new WaitForSeconds(0.01f);
+		// Update total score text
+		TotalScore.text = PlayerPrefs.GetInt("Coins").ToString();
 
-	GameObject tempG;
+	// Update current car value text
+	CarValue.text = Values[ID].ToString();
+}
+
+GameObject tempG;
 
 	// Public function for NextCar select button in menu
 	public void NextCar ()
